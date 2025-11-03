@@ -1,0 +1,108 @@
+services:
+  # Nginx Load Balancer
+  nginx:
+    image: nginx:alpine
+    container_name: nginx-lb
+    ports:
+      - "80:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - backend1
+      - backend2
+      - backend3
+    networks:
+      - app-network
+    restart: unless-stopped
+
+  # FastAPI Backend 1
+  backend1:
+    build: .
+    container_name: fastapi-backend-1
+    env_file:
+      - .env
+    volumes:
+      - ~/.aws:/root/.aws:ro
+      - ./data/sessions:/app/data/sessions
+      - ./src:/app/src
+    depends_on:
+      - redis
+    networks:
+      - app-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+  # FastAPI Backend 2
+  backend2:
+    build: .
+    container_name: fastapi-backend-2
+    env_file:
+      - .env
+    volumes:
+      - ~/.aws:/root/.aws:ro
+      - ./data/sessions:/app/data/sessions
+      - ./src:/app/src
+    depends_on:
+      - redis
+    networks:
+      - app-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+  # FastAPI Backend 3
+  backend3:
+    build: .
+    container_name: fastapi-backend-3
+    env_file:
+      - .env
+    volumes:
+      - ~/.aws:/root/.aws:ro
+      - ./data/sessions:/app/data/sessions
+      - ./src:/app/src
+    depends_on:
+      - redis
+    networks:
+      - app-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+
+  # Redis
+  redis:
+    image: redis:7-alpine
+    container_name: redis
+    command: redis-server --appendonly yes --maxmemory 256mb --maxmemory-policy allkeys-lru
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis-data:/data
+    networks:
+      - app-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 3
+
+volumes:
+  redis-data:
+    driver: local
+
+networks:
+  app-network:
+    driver: bridge

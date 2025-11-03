@@ -1,0 +1,97 @@
+import asyncio
+from collections.abc import AsyncGenerator
+
+from loguru import logger
+from strands import Agent
+from strands.models import BedrockModel
+from strands.session import FileSessionManager
+from strands_tools import stop
+
+from src.config import settings
+from src.services.redis_client import RedisClient
+
+
+class AgentOrchestrator:
+    """Simplified agent orchestrator using Strands SDK properly"""
+
+    def __init__(self, chat_id: str):
+        self.chat_id = chat_id
+        self.stop_requested = False
+
+        # Setup session management
+        import os
+
+        os.makedirs(settings.session_dir, exist_ok=True)
+        self.session_manager = FileSessionManager(
+            session_id=chat_id, directory=settings.session_dir
+        )
+
+        # Create Bedrock model
+        self.model = BedrockModel(
+            model_id=settings.bedrock_model_id,
+            region_name=settings.aws_region,
+            temperature=settings.bedrock_temperature,
+        )
+
+    async def stream_response(self, message: str) -> AsyncGenerator[str]:
+        """Stream agent response with stop signal checking
+
+        Args:
+            message: User message to process
+
+        Yields:
+            Response chunks from the agent
+        """
+        logger.info(f"chat_id=<{self.chat_id}> | Processing message: {message[:100]}")
+
+        # Create agent with Bedrock model, tools, and session management
+        agent = Agent(
+            agent_id=self.chat_id,
+            model=self.model,
+            tools=[stop],  # Use built-in stop tool
+            session_manager=self.session_manager,
+            system_prompt=(
+                "You are a helpful AI assistant. When asked to stop or if interrupted, "
+                "use the stop tool immediately. Be concise and helpful."
+            ),
+        )
+
+        # Stream agent response
+        async for event in agent.stream_async(message):
+            # Check for stop signal during streaming
+            if await self._check_stop():
+                logger.info(f"chat_id=<{self.chat_id}> | Stop detected during streaming")
+                agent.tool.stop(message="The agent has been gracefully stopped!")
+                return
+
+            # Extract and yield text content
+            if "data" in event:
+                data = event["data"]
+                if isinstance(data, str):
+                    yield data
+                elif isinstance(data, dict) and "text" in data:
+                    yield data["text"]
+
+            # Small delay to allow stop signal checks
+            await asyncio.sleep(0.01)
+
+        logger.info(f"chat_id=<{self.chat_id}> | Processing complete")
+
+    async def _check_stop(self) -> bool:
+        """Check if stop signal was sent via Redis
+
+        Returns:
+            True if stop was requested
+        """
+        if self.stop_requested:
+            return True
+
+        try:
+            stop_detected = await RedisClient.check_stop_signal(self.chat_id)
+            if stop_detected:
+                self.stop_requested = True
+                return True
+        except Exception as e:
+            logger.error(f"chat_id=<{self.chat_id}> | Failed to check stop: {e}")
+
+        return False
