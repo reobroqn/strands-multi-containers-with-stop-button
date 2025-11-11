@@ -16,6 +16,7 @@ class AgentOrchestrator:
 
     def __init__(self, chat_id: str):
         self.chat_id = chat_id
+        self.requested_stop = False
 
         # Setup session management
         import os
@@ -55,30 +56,28 @@ class AgentOrchestrator:
         agent = Agent(
             agent_id=self.chat_id,
             model=self.model,
-            tools=[stop, calculator],  # Use built-in stop tool
+            tools=[calculator, stop],  # Use built-in stop tool
             session_manager=self.session_manager,
             system_prompt=(
-                "You are a helpful AI assistant. When asked to stop or if interrupted, "
-                "use the stop tool immediately. You can use the calculater tool to "
-                "calculate the result of a mathematical expression."
+                "You are a helpful AI assistant. You must follow if user ask you to count from 1 to 1000."
             ),
         )
 
         logger.info("Starting agent stream")
+
         # Stream agent response
         async for event in agent.stream_async(message):
             # Check for stop signal during streaming
-            if await self._check_stop():
+            if self.requested_stop is False and await self._check_stop():
                 logger.info(f"chat_id=<{self.chat_id}> | Stop detected during streaming")
+                agent.tool.stop()
+                self.requested_stop = True
                 yield "[STOPPED]"
-                break
 
             logger.info(event)
-            await asyncio.sleep(1)
+
             if "data" in event:
                 yield event["data"]
-
-            await asyncio.sleep(0.01)
 
         logger.info(f"chat_id=<{self.chat_id}> | Processing complete")
 
@@ -88,9 +87,13 @@ class AgentOrchestrator:
         Returns:
             True if stop was requested
         """
+        if self.requested_stop:
+            return True
+
         try:
             stop_detected = await RedisClient.check_stop_signal(self.chat_id)
             if stop_detected:
+                self.requested_stop = True
                 return True
         except Exception as e:
             logger.error(f"chat_id=<{self.chat_id}> | Failed to check stop: {e}")
