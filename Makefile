@@ -1,7 +1,7 @@
 # FastAPI Agent Chat - Makefile
 # Compatible with WSL/Linux environments
 
-.PHONY: start stop restart build logs status test health shell redis
+.PHONY: start stop restart build logs status test health shell redis ps
 .DEFAULT_GOAL := help
 
 # Variables
@@ -37,6 +37,9 @@ build: ## Build Docker images
 	@echo "$(BLUE)🔨 Building Docker images...$(NC)"
 	@UID=$(id -u) GID=$(id -g) docker compose -f $(COMPOSE_FILE) build
 	@echo "$(GREEN)✅ Built!$(NC)"
+
+ps: ## List running containers
+	@UID=$(id -u) GID=$(id -g) docker compose -f $(COMPOSE_FILE) ps
 
 
 logs: ## View logs from all services (follow mode)
