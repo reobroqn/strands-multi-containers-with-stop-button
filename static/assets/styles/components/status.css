@@ -1,0 +1,320 @@
+/**
+ * Status Component Styles
+ * Styles for status indicators and feedback messages
+ */
+
+.status {
+    padding: var(--spacing-md);
+    border-radius: var(--border-radius);
+    margin-bottom: var(--spacing-xl);
+    font-weight: 500;
+    display: none;
+    position: relative;
+    border-left: 4px solid transparent;
+    transition: var(--transition);
+}
+
+.status.active {
+    display: block;
+    animation: statusSlideIn 0.3s ease-out;
+}
+
+@keyframes statusSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Status Types */
+.status.connecting {
+    background: var(--warning-bg);
+    color: var(--warning-color);
+    border-left-color: #ffc107;
+}
+
+.status.connected {
+    background: var(--success-bg);
+    color: var(--success-color);
+    border-left-color: #28a745;
+}
+
+.status.error {
+    background: var(--error-bg);
+    color: var(--error-color);
+    border-left-color: var(--danger-color);
+}
+
+/* Status with Icons */
+.status::before {
+    content: "";
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    margin-right: var(--spacing-sm);
+    border-radius: 50%;
+    vertical-align: middle;
+}
+
+.status.connecting::before {
+    background: #ffc107;
+    animation: statusPulse 1.5s infinite;
+}
+
+.status.connected::before {
+    background: #28a745;
+}
+
+.status.error::before {
+    background: var(--danger-color);
+}
+
+@keyframes statusPulse {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.6;
+        transform: scale(1.1);
+    }
+}
+
+/* Dismissible Status */
+.status.dismissible {
+    padding-right: 40px; /* Space for dismiss button */
+}
+
+.status-dismiss {
+    position: absolute;
+    top: 50%;
+    right: var(--spacing-md);
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 18px;
+    line-height: 1;
+    color: inherit;
+    cursor: pointer;
+    opacity: 0.7;
+    padding: 0;
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: var(--transition);
+}
+
+.status-dismiss:hover {
+    opacity: 1;
+    background: rgba(0, 0, 0, 0.1);
+}
+
+/* Status Variations */
+.status.info {
+    background: var(--info-bg);
+    color: var(--info-color);
+    border-left-color: var(--primary-color);
+}
+
+.status.info::before {
+    background: var(--primary-color);
+}
+
+.status.warning {
+    background: var(--warning-bg);
+    color: var(--warning-color);
+    border-left-color: #ffc107;
+}
+
+.status.warning::before {
+    background: #ffc107;
+}
+
+.status.success {
+    background: var(--success-bg);
+    color: var(--success-color);
+    border-left-color: #28a745;
+}
+
+.status.success::before {
+    background: #28a745;
+}
+
+/* Loading Status */
+.status.loading {
+    background: var(--light-gray);
+    color: var(--dark-gray);
+    border-left-color: var(--primary-color);
+    position: relative;
+    padding-left: 45px; /* Space for loading spinner */
+}
+
+.status.loading::before {
+    content: "";
+    position: absolute;
+    left: var(--spacing-md);
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--primary-color);
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: translateY(-50%) rotate(360deg);
+    }
+}
+
+/* Compact Status */
+.status.compact {
+    padding: var(--spacing-sm) var(--spacing-md);
+    margin-bottom: var(--spacing-md);
+    font-size: var(--font-size-small);
+}
+
+/* Inline Status */
+.status.inline {
+    display: inline-block;
+    margin: 0;
+    margin-left: var(--spacing-sm);
+    vertical-align: middle;
+}
+
+/* Status with Progress Bar */
+.status.progress {
+    padding-bottom: 35px; /* Space for progress bar */
+}
+
+.status-progress-bar {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+    overflow: hidden;
+}
+
+.status-progress-fill {
+    height: 100%;
+    background: var(--primary-color);
+    transition: width 0.3s ease;
+    animation: progressIndeterminate 2s infinite;
+}
+
+@keyframes progressIndeterminate {
+    0% {
+        transform: translateX(-100%);
+    }
+    50% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(100%);
+    }
+}
+
+/* Status Badges */
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    padding: 4px var(--spacing-sm);
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.status-badge.online {
+    background: var(--success-bg);
+    color: var(--success-color);
+}
+
+.status-badge.offline {
+    background: var(--error-bg);
+    color: var(--error-color);
+}
+
+.status-badge.away {
+    background: var(--warning-bg);
+    color: var(--warning-color);
+}
+
+/* Toast-style Status */
+.status.toast {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    min-width: 250px;
+    max-width: 400px;
+    margin: 0;
+    z-index: 1000;
+    box-shadow: var(--box-shadow);
+}
+
+.status.toast.top-left {
+    top: 20px;
+    left: 20px;
+    right: auto;
+}
+
+.status.toast.bottom-right {
+    top: auto;
+    bottom: 20px;
+    right: 20px;
+}
+
+.status.toast.bottom-left {
+    top: auto;
+    bottom: 20px;
+    left: 20px;
+    right: auto;
+}
+
+/* Responsive Status */
+@media (max-width: 768px) {
+    .status {
+        padding: var(--spacing-sm);
+        margin-bottom: var(--spacing-lg);
+        font-size: var(--font-size-small);
+    }
+
+    .status.toast {
+        left: 10px;
+        right: 10px;
+        min-width: auto;
+        max-width: none;
+        top: 10px;
+    }
+
+    .status.toast.bottom-right,
+    .status.toast.bottom-left {
+        bottom: 10px;
+        top: auto;
+    }
+}
+
+@media (max-width: 480px) {
+    .status {
+        padding: 8px var(--spacing-sm);
+        margin-bottom: var(--spacing-md);
+    }
+
+    .status.dismissible {
+        padding-right: 35px;
+    }
+}

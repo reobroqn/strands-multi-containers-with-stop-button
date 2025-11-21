@@ -1,0 +1,1618 @@
+{
+  "config": {
+    "configFile": "D:\\Projects\\strands-test\\static\\tests\\playwright.config.js",
+    "rootDir": "D:/Projects/strands-test/static/tests/e2e",
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 3
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "html",
+        {
+          "outputFolder": "test-results/html"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "test-results/results.json"
+        }
+      ],
+      [
+        "list",
+        null
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "D:/Projects/strands-test/static/tests/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 3
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "D:/Projects/strands-test/static/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      },
+      {
+        "outputDir": "D:/Projects/strands-test/static/tests/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 3
+        },
+        "id": "mobile",
+        "name": "mobile",
+        "testDir": "D:/Projects/strands-test/static/tests/e2e",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 30000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.56.1",
+    "workers": 3,
+    "webServer": {
+      "command": "npm start",
+      "url": "http://localhost:8000",
+      "reuseExistingServer": true,
+      "timeout": 120000
+    }
+  },
+  "suites": [
+    {
+      "title": "01-app-loading.spec.js",
+      "file": "01-app-loading.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Enhanced App Loading",
+          "file": "01-app-loading.spec.js",
+          "line": 8,
+          "column": 6,
+          "specs": [
+            {
+              "title": "should load enhanced UI and initialize application",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 8956,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-11-21T15:22:30.842Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "40d1a2fa41969839f85c-41d6d2569146565df9c9",
+              "file": "01-app-loading.spec.js",
+              "line": 14,
+              "column": 7
+            },
+            {
+              "title": "should have responsive design for mobile and desktop",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 8809,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-11-21T15:22:30.865Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "40d1a2fa41969839f85c-a767d16fd091bf07fc7d",
+              "file": "01-app-loading.spec.js",
+              "line": 49,
+              "column": 7
+            },
+            {
+              "title": "should load enhanced UI and initialize application",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile",
+                  "projectName": "mobile",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 1674,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-11-21T15:23:02.414Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "40d1a2fa41969839f85c-f0cff87cce3d1df63b28",
+              "file": "01-app-loading.spec.js",
+              "line": 14,
+              "column": 7
+            },
+            {
+              "title": "should have responsive design for mobile and desktop",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile",
+                  "projectName": "mobile",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 2158,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-11-21T15:23:03.279Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "40d1a2fa41969839f85c-2f59d4fa12587778780e",
+              "file": "01-app-loading.spec.js",
+              "line": 49,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "02-chat-functionality.spec.js",
+      "file": "02-chat-functionality.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Core Chat Functionality",
+          "file": "02-chat-functionality.spec.js",
+          "line": 8,
+          "column": 6,
+          "specs": [
+            {
+              "title": "should send message and receive streaming response",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 12948,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-11-21T15:22:30.841Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "f9bd58c806242e3034c3-0276b16e7a1b5dd18e82",
+              "file": "02-chat-functionality.spec.js",
+              "line": 14,
+              "column": 7
+            },
+            {
+              "title": "should handle message validation correctly",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 2452,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-11-21T15:22:39.953Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "f9bd58c806242e3034c3-fa00fdbaeb924d7dd58e",
+              "file": "02-chat-functionality.spec.js",
+              "line": 36,
+              "column": 7
+            },
+            {
+              "title": "should support keyboard shortcuts for better UX",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3948,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-11-21T15:22:40.041Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "f9bd58c806242e3034c3-c7ac859ca365cdf87848",
+              "file": "02-chat-functionality.spec.js",
+              "line": 53,
+              "column": 7
+            },
+            {
+              "title": "should send message and receive streaming response",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile",
+                  "projectName": "mobile",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 12062,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#status')\nTimeout: 10000ms\n\u001b[32m- Expected substring  - 1\u001b[39m\n\u001b[31m+ Received string     + 6\u001b[39m\n\n\u001b[32m- Agent is typing\u001b[39m\n\u001b[31m+\u001b[39m\n\u001b[31m+ \u001b[43m                    \u001b[49m\u001b[39m\n\u001b[31m+ \u001b[43m                        \u001b[49m\u001b[39m\n\u001b[31m+                         Ready to chat\u001b[39m\n\u001b[31m+ \u001b[43m                    \u001b[49m\u001b[39m\n\u001b[31m+ \u001b[43m                \u001b[49m\u001b[39m\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('#status')\u001b[22m\n\u001b[2m    8 × locator resolved to <div id=\"status\" class=\"enhanced-status\">…</div>\u001b[22m\n\u001b[2m      - unexpected value \"\u001b[22m\n\u001b[2m                    \u001b[22m\n\u001b[2m                        \u001b[22m\n\u001b[2m                        Connecting to agent...\u001b[22m\n\u001b[2m                    \u001b[22m\n\u001b[2m                \"\u001b[22m\n\u001b[2m    6 × locator resolved to <div id=\"status\" class=\"enhanced-status enhanced-status-connected\">…</div>\u001b[22m\n\u001b[2m      - unexpected value \"\u001b[22m\n\u001b[2m                    \u001b[22m\n\u001b[2m                        \u001b[22m\n\u001b[2m                        Ready to chat\u001b[22m\n\u001b[2m                    \u001b[22m\n\u001b[2m                \"\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#status')\nTimeout: 10000ms\n\u001b[32m- Expected substring  - 1\u001b[39m\n\u001b[31m+ Received string     + 6\u001b[39m\n\n\u001b[32m- Agent is typing\u001b[39m\n\u001b[31m+\u001b[39m\n\u001b[31m+ \u001b[43m                    \u001b[49m\u001b[39m\n\u001b[31m+ \u001b[43m                        \u001b[49m\u001b[39m\n\u001b[31m+                         Ready to chat\u001b[39m\n\u001b[31m+ \u001b[43m                    \u001b[49m\u001b[39m\n\u001b[31m+ \u001b[43m                \u001b[49m\u001b[39m\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('#status')\u001b[22m\n\u001b[2m    8 × locator resolved to <div id=\"status\" class=\"enhanced-status\">…</div>\u001b[22m\n\u001b[2m      - unexpected value \"\u001b[22m\n\u001b[2m                    \u001b[22m\n\u001b[2m                        \u001b[22m\n\u001b[2m                        Connecting to agent...\u001b[22m\n\u001b[2m                    \u001b[22m\n\u001b[2m                \"\u001b[22m\n\u001b[2m    6 × locator resolved to <div id=\"status\" class=\"enhanced-status enhanced-status-connected\">…</div>\u001b[22m\n\u001b[2m      - unexpected value \"\u001b[22m\n\u001b[2m                    \u001b[22m\n\u001b[2m                        \u001b[22m\n\u001b[2m                        Ready to chat\u001b[22m\n\u001b[2m                    \u001b[22m\n\u001b[2m                \"\u001b[22m\n\n    at D:\\Projects\\strands-test\\static\\tests\\e2e\\02-chat-functionality.spec.js:25:43",
+                        "location": {
+                          "file": "D:\\Projects\\strands-test\\static\\tests\\e2e\\02-chat-functionality.spec.js",
+                          "column": 43,
+                          "line": 25
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 23 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'#sendBtn'\u001b[39m))\u001b[33m.\u001b[39mtoBeDisabled()\u001b[33m;\u001b[39m\n \u001b[90m 24 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'#stopBtn'\u001b[39m))\u001b[33m.\u001b[39mtoBeEnabled()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 25 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'#status'\u001b[39m))\u001b[33m.\u001b[39mtoContainText(\u001b[32m'Agent is typing'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 26 |\u001b[39m\n \u001b[90m 27 |\u001b[39m     \u001b[90m// Wait for response\u001b[39m\n \u001b[90m 28 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'.enhanced-message-user'\u001b[39m))\u001b[33m.\u001b[39mtoContainText(\u001b[32m'You: Hello! Please respond with a simple greeting.'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Projects\\strands-test\\static\\tests\\e2e\\02-chat-functionality.spec.js",
+                            "column": 43,
+                            "line": 25
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#status')\nTimeout: 10000ms\n\u001b[32m- Expected substring  - 1\u001b[39m\n\u001b[31m+ Received string     + 6\u001b[39m\n\n\u001b[32m- Agent is typing\u001b[39m\n\u001b[31m+\u001b[39m\n\u001b[31m+ \u001b[43m                    \u001b[49m\u001b[39m\n\u001b[31m+ \u001b[43m                        \u001b[49m\u001b[39m\n\u001b[31m+                         Ready to chat\u001b[39m\n\u001b[31m+ \u001b[43m                    \u001b[49m\u001b[39m\n\u001b[31m+ \u001b[43m                \u001b[49m\u001b[39m\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('#status')\u001b[22m\n\u001b[2m    8 × locator resolved to <div id=\"status\" class=\"enhanced-status\">…</div>\u001b[22m\n\u001b[2m      - unexpected value \"\u001b[22m\n\u001b[2m                    \u001b[22m\n\u001b[2m                        \u001b[22m\n\u001b[2m                        Connecting to agent...\u001b[22m\n\u001b[2m                    \u001b[22m\n\u001b[2m                \"\u001b[22m\n\u001b[2m    6 × locator resolved to <div id=\"status\" class=\"enhanced-status enhanced-status-connected\">…</div>\u001b[22m\n\u001b[2m      - unexpected value \"\u001b[22m\n\u001b[2m                    \u001b[22m\n\u001b[2m                        \u001b[22m\n\u001b[2m                        Ready to chat\u001b[22m\n\u001b[2m                    \u001b[22m\n\u001b[2m                \"\u001b[22m\n\n\n\u001b[0m \u001b[90m 23 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'#sendBtn'\u001b[39m))\u001b[33m.\u001b[39mtoBeDisabled()\u001b[33m;\u001b[39m\n \u001b[90m 24 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'#stopBtn'\u001b[39m))\u001b[33m.\u001b[39mtoBeEnabled()\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 25 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'#status'\u001b[39m))\u001b[33m.\u001b[39mtoContainText(\u001b[32m'Agent is typing'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 26 |\u001b[39m\n \u001b[90m 27 |\u001b[39m     \u001b[90m// Wait for response\u001b[39m\n \u001b[90m 28 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'.enhanced-message-user'\u001b[39m))\u001b[33m.\u001b[39mtoContainText(\u001b[32m'You: Hello! Please respond with a simple greeting.'\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at D:\\Projects\\strands-test\\static\\tests\\e2e\\02-chat-functionality.spec.js:25:43\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-11-21T15:23:03.823Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Projects\\strands-test\\static\\tests\\test-results\\02-chat-functionality-Core-1685c--receive-streaming-response-mobile\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Projects\\strands-test\\static\\tests\\test-results\\02-chat-functionality-Core-1685c--receive-streaming-response-mobile\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Projects\\strands-test\\static\\tests\\e2e\\02-chat-functionality.spec.js",
+                        "column": 43,
+                        "line": 25
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "f9bd58c806242e3034c3-0237950957d93f03f65b",
+              "file": "02-chat-functionality.spec.js",
+              "line": 14,
+              "column": 7
+            },
+            {
+              "title": "should handle message validation correctly",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile",
+                  "projectName": "mobile",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 2416,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-11-21T15:23:04.191Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "f9bd58c806242e3034c3-78d18016688a8ec9e030",
+              "file": "02-chat-functionality.spec.js",
+              "line": 36,
+              "column": 7
+            },
+            {
+              "title": "should support keyboard shortcuts for better UX",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile",
+                  "projectName": "mobile",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 4804,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-11-21T15:23:05.533Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "f9bd58c806242e3034c3-f4c33659c2b08d0bed55",
+              "file": "02-chat-functionality.spec.js",
+              "line": 53,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "03-stop-functionality.spec.js",
+      "file": "03-stop-functionality.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Redis Stop Functionality",
+          "file": "03-stop-functionality.spec.js",
+          "line": 8,
+          "column": 6,
+          "specs": [
+            {
+              "title": "should stop agent immediately via Redis signal",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 5971,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-11-21T15:22:42.475Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8e9bee4ce51910331279-47343003c07a3417c942",
+              "file": "03-stop-functionality.spec.js",
+              "line": 14,
+              "column": 7
+            },
+            {
+              "title": "should handle Escape key shortcut for stopping agent",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 4308,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-11-21T15:22:44.049Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8e9bee4ce51910331279-a91e64b9dade9007bb5f",
+              "file": "03-stop-functionality.spec.js",
+              "line": 43,
+              "column": 7
+            },
+            {
+              "title": "should handle stop request without active agent gracefully",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2254,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-11-21T15:22:44.066Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8e9bee4ce51910331279-28c384ee6ea1f7932dda",
+              "file": "03-stop-functionality.spec.js",
+              "line": 61,
+              "column": 7
+            },
+            {
+              "title": "should stop agent immediately via Redis signal",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile",
+                  "projectName": "mobile",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 7685,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-11-21T15:23:06.638Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8e9bee4ce51910331279-6f41b51992362234cb6f",
+              "file": "03-stop-functionality.spec.js",
+              "line": 14,
+              "column": 7
+            },
+            {
+              "title": "should handle Escape key shortcut for stopping agent",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile",
+                  "projectName": "mobile",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 3748,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-11-21T15:23:10.370Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8e9bee4ce51910331279-7ff4d5bc55c7f5f5db46",
+              "file": "03-stop-functionality.spec.js",
+              "line": 43,
+              "column": 7
+            },
+            {
+              "title": "should handle stop request without active agent gracefully",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile",
+                  "projectName": "mobile",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 1384,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-11-21T15:23:14.142Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "8e9bee4ce51910331279-d558a5e0da2217912e11",
+              "file": "03-stop-functionality.spec.js",
+              "line": 61,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "04-ui-interactions.spec.js",
+      "file": "04-ui-interactions.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "UI Component Interactions",
+          "file": "04-ui-interactions.spec.js",
+          "line": 8,
+          "column": 6,
+          "specs": [
+            {
+              "title": "should manage button states correctly during chat flow",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 6020,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-11-21T15:22:46.372Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "f2a4643c79effa60a60e-85783002c5e8b2c7c91c",
+              "file": "04-ui-interactions.spec.js",
+              "line": 14,
+              "column": 7
+            },
+            {
+              "title": "should handle clear chat functionality properly",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "failed",
+                      "duration": 4591,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('.enhanced-message')\nExpected substring: \u001b[32m\"Welcome!\"\u001b[39m\nError: strict mode violation: locator('.enhanced-message') resolved to 3 elements:\n    1) <div class=\"enhanced-message enhanced-message-system\">…</div> aka getByText('Welcome! Enter a message to')\n    2) <div id=\"msg-1763738570513-jt1u8sie3\" class=\"enhanced-message enhanced-message-user\">You: Test message before clear</div> aka getByText('You: Test message before clear')\n    3) <div id=\"msg-1763738571945-cw3xy2ro7\" class=\"enhanced-message enhanced-message-bot\">…</div> aka getByText('Agent:')\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('.enhanced-message')\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('.enhanced-message')\nExpected substring: \u001b[32m\"Welcome!\"\u001b[39m\nError: strict mode violation: locator('.enhanced-message') resolved to 3 elements:\n    1) <div class=\"enhanced-message enhanced-message-system\">…</div> aka getByText('Welcome! Enter a message to')\n    2) <div id=\"msg-1763738570513-jt1u8sie3\" class=\"enhanced-message enhanced-message-user\">You: Test message before clear</div> aka getByText('You: Test message before clear')\n    3) <div id=\"msg-1763738571945-cw3xy2ro7\" class=\"enhanced-message enhanced-message-bot\">…</div> aka getByText('Agent:')\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('.enhanced-message')\u001b[22m\n\n    at D:\\Projects\\strands-test\\static\\tests\\e2e\\04-ui-interactions.spec.js:47:53",
+                        "location": {
+                          "file": "D:\\Projects\\strands-test\\static\\tests\\e2e\\04-ui-interactions.spec.js",
+                          "column": 53,
+                          "line": 47
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 45 |\u001b[39m\n \u001b[90m 46 |\u001b[39m     \u001b[90m// Verify chat is cleared\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 47 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'.enhanced-message'\u001b[39m))\u001b[33m.\u001b[39mtoContainText(\u001b[32m'Welcome!'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 48 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'#message'\u001b[39m))\u001b[33m.\u001b[39mtoHaveValue(\u001b[32m''\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 49 |\u001b[39m\n \u001b[90m 50 |\u001b[39m     \u001b[90m// Should generate new chat ID\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Projects\\strands-test\\static\\tests\\e2e\\04-ui-interactions.spec.js",
+                            "column": 53,
+                            "line": 47
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('.enhanced-message')\nExpected substring: \u001b[32m\"Welcome!\"\u001b[39m\nError: strict mode violation: locator('.enhanced-message') resolved to 3 elements:\n    1) <div class=\"enhanced-message enhanced-message-system\">…</div> aka getByText('Welcome! Enter a message to')\n    2) <div id=\"msg-1763738570513-jt1u8sie3\" class=\"enhanced-message enhanced-message-user\">You: Test message before clear</div> aka getByText('You: Test message before clear')\n    3) <div id=\"msg-1763738571945-cw3xy2ro7\" class=\"enhanced-message enhanced-message-bot\">…</div> aka getByText('Agent:')\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('.enhanced-message')\u001b[22m\n\n\n\u001b[0m \u001b[90m 45 |\u001b[39m\n \u001b[90m 46 |\u001b[39m     \u001b[90m// Verify chat is cleared\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 47 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'.enhanced-message'\u001b[39m))\u001b[33m.\u001b[39mtoContainText(\u001b[32m'Welcome!'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 48 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'#message'\u001b[39m))\u001b[33m.\u001b[39mtoHaveValue(\u001b[32m''\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 49 |\u001b[39m\n \u001b[90m 50 |\u001b[39m     \u001b[90m// Should generate new chat ID\u001b[39m\u001b[0m\n\u001b[2m    at D:\\Projects\\strands-test\\static\\tests\\e2e\\04-ui-interactions.spec.js:47:53\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-11-21T15:22:48.438Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Projects\\strands-test\\static\\tests\\test-results\\04-ui-interactions-UI-Comp-55035-chat-functionality-properly-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Projects\\strands-test\\static\\tests\\test-results\\04-ui-interactions-UI-Comp-55035-chat-functionality-properly-chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Projects\\strands-test\\static\\tests\\e2e\\04-ui-interactions.spec.js",
+                        "column": 53,
+                        "line": 47
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "f2a4643c79effa60a60e-6e5000201038ee979bf2",
+              "file": "04-ui-interactions.spec.js",
+              "line": 36,
+              "column": 7
+            },
+            {
+              "title": "should display enhanced status messages correctly",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 7656,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-11-21T15:22:48.488Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "f2a4643c79effa60a60e-378706184c5a4c6e5662",
+              "file": "04-ui-interactions.spec.js",
+              "line": 55,
+              "column": 7
+            },
+            {
+              "title": "should handle form input validation and auto-resize",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 2177,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m40\u001b[39m\nReceived:   \u001b[31m40\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m40\u001b[39m\nReceived:   \u001b[31m40\u001b[39m\n    at D:\\Projects\\strands-test\\static\\tests\\e2e\\04-ui-interactions.spec.js:91:33",
+                        "location": {
+                          "file": "D:\\Projects\\strands-test\\static\\tests\\e2e\\04-ui-interactions.spec.js",
+                          "column": 33,
+                          "line": 91
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 89 |\u001b[39m     \u001b[90m// Height should increase\u001b[39m\n \u001b[90m 90 |\u001b[39m     \u001b[36mconst\u001b[39m newHeight \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m messageInput\u001b[33m.\u001b[39mevaluate(el \u001b[33m=>\u001b[39m el\u001b[33m.\u001b[39mstyle\u001b[33m.\u001b[39mheight)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 91 |\u001b[39m     expect(parseInt(newHeight))\u001b[33m.\u001b[39mtoBeGreaterThan(parseInt(initialHeight) \u001b[33m||\u001b[39m \u001b[35m40\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 92 |\u001b[39m\n \u001b[90m 93 |\u001b[39m     \u001b[90m// Test chat ID validation\u001b[39m\n \u001b[90m 94 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mfill(\u001b[32m'#chatId'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m''\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Projects\\strands-test\\static\\tests\\e2e\\04-ui-interactions.spec.js",
+                            "column": 33,
+                            "line": 91
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m40\u001b[39m\nReceived:   \u001b[31m40\u001b[39m\n\n\u001b[0m \u001b[90m 89 |\u001b[39m     \u001b[90m// Height should increase\u001b[39m\n \u001b[90m 90 |\u001b[39m     \u001b[36mconst\u001b[39m newHeight \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m messageInput\u001b[33m.\u001b[39mevaluate(el \u001b[33m=>\u001b[39m el\u001b[33m.\u001b[39mstyle\u001b[33m.\u001b[39mheight)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 91 |\u001b[39m     expect(parseInt(newHeight))\u001b[33m.\u001b[39mtoBeGreaterThan(parseInt(initialHeight) \u001b[33m||\u001b[39m \u001b[35m40\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 92 |\u001b[39m\n \u001b[90m 93 |\u001b[39m     \u001b[90m// Test chat ID validation\u001b[39m\n \u001b[90m 94 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mfill(\u001b[32m'#chatId'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m''\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at D:\\Projects\\strands-test\\static\\tests\\e2e\\04-ui-interactions.spec.js:91:33\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-11-21T15:22:52.446Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Projects\\strands-test\\static\\tests\\test-results\\04-ui-interactions-UI-Comp-144fa--validation-and-auto-resize-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Projects\\strands-test\\static\\tests\\test-results\\04-ui-interactions-UI-Comp-144fa--validation-and-auto-resize-chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Projects\\strands-test\\static\\tests\\e2e\\04-ui-interactions.spec.js",
+                        "column": 33,
+                        "line": 91
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "f2a4643c79effa60a60e-a3d44a5739ae2a51f47e",
+              "file": "04-ui-interactions.spec.js",
+              "line": 80,
+              "column": 7
+            },
+            {
+              "title": "should manage button states correctly during chat flow",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile",
+                  "projectName": "mobile",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 6392,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-11-21T15:23:14.350Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "f2a4643c79effa60a60e-c27ec949be7cd7ecaef5",
+              "file": "04-ui-interactions.spec.js",
+              "line": 14,
+              "column": 7
+            },
+            {
+              "title": "should handle clear chat functionality properly",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile",
+                  "projectName": "mobile",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 2,
+                      "status": "failed",
+                      "duration": 5850,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('.enhanced-message')\nExpected substring: \u001b[32m\"Welcome!\"\u001b[39m\nError: strict mode violation: locator('.enhanced-message') resolved to 4 elements:\n    1) <div class=\"enhanced-message enhanced-message-system\">…</div> aka getByText('Welcome! Enter a message to')\n    2) <div id=\"msg-1763738598014-iw5cbbou7\" class=\"enhanced-message enhanced-message-user\">You: Test message before clear</div> aka getByText('You: Test message before clear')\n    3) <div id=\"msg-1763738598016-1fd28nz3n\" class=\"enhanced-message enhanced-message-bot\">Agent: [STOPPED] - Agent terminated by user</div> aka getByText('Agent: [STOPPED] - Agent')\n    4) <div id=\"msg-1763738600557-xuw7mb4f5\" class=\"enhanced-message enhanced-message-system\">[STOPPED] Stop signal sent for chat test-session-…</div> aka getByText('[STOPPED] Stop signal sent')\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('.enhanced-message')\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('.enhanced-message')\nExpected substring: \u001b[32m\"Welcome!\"\u001b[39m\nError: strict mode violation: locator('.enhanced-message') resolved to 4 elements:\n    1) <div class=\"enhanced-message enhanced-message-system\">…</div> aka getByText('Welcome! Enter a message to')\n    2) <div id=\"msg-1763738598014-iw5cbbou7\" class=\"enhanced-message enhanced-message-user\">You: Test message before clear</div> aka getByText('You: Test message before clear')\n    3) <div id=\"msg-1763738598016-1fd28nz3n\" class=\"enhanced-message enhanced-message-bot\">Agent: [STOPPED] - Agent terminated by user</div> aka getByText('Agent: [STOPPED] - Agent')\n    4) <div id=\"msg-1763738600557-xuw7mb4f5\" class=\"enhanced-message enhanced-message-system\">[STOPPED] Stop signal sent for chat test-session-…</div> aka getByText('[STOPPED] Stop signal sent')\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('.enhanced-message')\u001b[22m\n\n    at D:\\Projects\\strands-test\\static\\tests\\e2e\\04-ui-interactions.spec.js:47:53",
+                        "location": {
+                          "file": "D:\\Projects\\strands-test\\static\\tests\\e2e\\04-ui-interactions.spec.js",
+                          "column": 53,
+                          "line": 47
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 45 |\u001b[39m\n \u001b[90m 46 |\u001b[39m     \u001b[90m// Verify chat is cleared\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 47 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'.enhanced-message'\u001b[39m))\u001b[33m.\u001b[39mtoContainText(\u001b[32m'Welcome!'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 48 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'#message'\u001b[39m))\u001b[33m.\u001b[39mtoHaveValue(\u001b[32m''\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 49 |\u001b[39m\n \u001b[90m 50 |\u001b[39m     \u001b[90m// Should generate new chat ID\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Projects\\strands-test\\static\\tests\\e2e\\04-ui-interactions.spec.js",
+                            "column": 53,
+                            "line": 47
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('.enhanced-message')\nExpected substring: \u001b[32m\"Welcome!\"\u001b[39m\nError: strict mode violation: locator('.enhanced-message') resolved to 4 elements:\n    1) <div class=\"enhanced-message enhanced-message-system\">…</div> aka getByText('Welcome! Enter a message to')\n    2) <div id=\"msg-1763738598014-iw5cbbou7\" class=\"enhanced-message enhanced-message-user\">You: Test message before clear</div> aka getByText('You: Test message before clear')\n    3) <div id=\"msg-1763738598016-1fd28nz3n\" class=\"enhanced-message enhanced-message-bot\">Agent: [STOPPED] - Agent terminated by user</div> aka getByText('Agent: [STOPPED] - Agent')\n    4) <div id=\"msg-1763738600557-xuw7mb4f5\" class=\"enhanced-message enhanced-message-system\">[STOPPED] Stop signal sent for chat test-session-…</div> aka getByText('[STOPPED] Stop signal sent')\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('.enhanced-message')\u001b[22m\n\n\n\u001b[0m \u001b[90m 45 |\u001b[39m\n \u001b[90m 46 |\u001b[39m     \u001b[90m// Verify chat is cleared\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 47 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'.enhanced-message'\u001b[39m))\u001b[33m.\u001b[39mtoContainText(\u001b[32m'Welcome!'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                                     \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 48 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'#message'\u001b[39m))\u001b[33m.\u001b[39mtoHaveValue(\u001b[32m''\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 49 |\u001b[39m\n \u001b[90m 50 |\u001b[39m     \u001b[90m// Should generate new chat ID\u001b[39m\u001b[0m\n\u001b[2m    at D:\\Projects\\strands-test\\static\\tests\\e2e\\04-ui-interactions.spec.js:47:53\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-11-21T15:23:15.555Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Projects\\strands-test\\static\\tests\\test-results\\04-ui-interactions-UI-Comp-55035-chat-functionality-properly-mobile\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Projects\\strands-test\\static\\tests\\test-results\\04-ui-interactions-UI-Comp-55035-chat-functionality-properly-mobile\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Projects\\strands-test\\static\\tests\\e2e\\04-ui-interactions.spec.js",
+                        "column": 53,
+                        "line": 47
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "f2a4643c79effa60a60e-f777db9c54bd0f1bafb0",
+              "file": "04-ui-interactions.spec.js",
+              "line": 36,
+              "column": 7
+            },
+            {
+              "title": "should display enhanced status messages correctly",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile",
+                  "projectName": "mobile",
+                  "results": [
+                    {
+                      "workerIndex": 8,
+                      "parallelIndex": 0,
+                      "status": "failed",
+                      "duration": 11983,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#status')\nTimeout: 10000ms\n\u001b[32m- Expected substring  - 1\u001b[39m\n\u001b[31m+ Received string     + 6\u001b[39m\n\n\u001b[32m- Agent is typing\u001b[39m\n\u001b[31m+\u001b[39m\n\u001b[31m+ \u001b[43m                    \u001b[49m\u001b[39m\n\u001b[31m+ \u001b[43m                        \u001b[49m\u001b[39m\n\u001b[31m+                         Connecting to agent...\u001b[39m\n\u001b[31m+ \u001b[43m                    \u001b[49m\u001b[39m\n\u001b[31m+ \u001b[43m                \u001b[49m\u001b[39m\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('#status')\u001b[22m\n\u001b[2m    14 × locator resolved to <div id=\"status\" class=\"enhanced-status\">…</div>\u001b[22m\n\u001b[2m       - unexpected value \"\u001b[22m\n\u001b[2m                    \u001b[22m\n\u001b[2m                        \u001b[22m\n\u001b[2m                        Connecting to agent...\u001b[22m\n\u001b[2m                    \u001b[22m\n\u001b[2m                \"\u001b[22m\n",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#status')\nTimeout: 10000ms\n\u001b[32m- Expected substring  - 1\u001b[39m\n\u001b[31m+ Received string     + 6\u001b[39m\n\n\u001b[32m- Agent is typing\u001b[39m\n\u001b[31m+\u001b[39m\n\u001b[31m+ \u001b[43m                    \u001b[49m\u001b[39m\n\u001b[31m+ \u001b[43m                        \u001b[49m\u001b[39m\n\u001b[31m+                         Connecting to agent...\u001b[39m\n\u001b[31m+ \u001b[43m                    \u001b[49m\u001b[39m\n\u001b[31m+ \u001b[43m                \u001b[49m\u001b[39m\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('#status')\u001b[22m\n\u001b[2m    14 × locator resolved to <div id=\"status\" class=\"enhanced-status\">…</div>\u001b[22m\n\u001b[2m       - unexpected value \"\u001b[22m\n\u001b[2m                    \u001b[22m\n\u001b[2m                        \u001b[22m\n\u001b[2m                        Connecting to agent...\u001b[22m\n\u001b[2m                    \u001b[22m\n\u001b[2m                \"\u001b[22m\n\n    at D:\\Projects\\strands-test\\static\\tests\\e2e\\04-ui-interactions.spec.js:62:43",
+                        "location": {
+                          "file": "D:\\Projects\\strands-test\\static\\tests\\e2e\\04-ui-interactions.spec.js",
+                          "column": 43,
+                          "line": 62
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 60 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mfill(\u001b[32m'#message'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'Test status changes'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 61 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mclick(\u001b[32m'#sendBtn'\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 62 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'#status'\u001b[39m))\u001b[33m.\u001b[39mtoContainText(\u001b[32m'Agent is typing'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 63 |\u001b[39m\n \u001b[90m 64 |\u001b[39m     \u001b[90m// Error state\u001b[39m\n \u001b[90m 65 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mfill(\u001b[32m'#chatId'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m''\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Projects\\strands-test\\static\\tests\\e2e\\04-ui-interactions.spec.js",
+                            "column": 43,
+                            "line": 62
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mlocator\u001b[39m\u001b[2m).\u001b[22mtoContainText\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m failed\n\nLocator: locator('#status')\nTimeout: 10000ms\n\u001b[32m- Expected substring  - 1\u001b[39m\n\u001b[31m+ Received string     + 6\u001b[39m\n\n\u001b[32m- Agent is typing\u001b[39m\n\u001b[31m+\u001b[39m\n\u001b[31m+ \u001b[43m                    \u001b[49m\u001b[39m\n\u001b[31m+ \u001b[43m                        \u001b[49m\u001b[39m\n\u001b[31m+                         Connecting to agent...\u001b[39m\n\u001b[31m+ \u001b[43m                    \u001b[49m\u001b[39m\n\u001b[31m+ \u001b[43m                \u001b[49m\u001b[39m\n\nCall log:\n\u001b[2m  - Expect \"toContainText\" with timeout 10000ms\u001b[22m\n\u001b[2m  - waiting for locator('#status')\u001b[22m\n\u001b[2m    14 × locator resolved to <div id=\"status\" class=\"enhanced-status\">…</div>\u001b[22m\n\u001b[2m       - unexpected value \"\u001b[22m\n\u001b[2m                    \u001b[22m\n\u001b[2m                        \u001b[22m\n\u001b[2m                        Connecting to agent...\u001b[22m\n\u001b[2m                    \u001b[22m\n\u001b[2m                \"\u001b[22m\n\n\n\u001b[0m \u001b[90m 60 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mfill(\u001b[32m'#message'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m'Test status changes'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 61 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mclick(\u001b[32m'#sendBtn'\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 62 |\u001b[39m     \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'#status'\u001b[39m))\u001b[33m.\u001b[39mtoContainText(\u001b[32m'Agent is typing'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 63 |\u001b[39m\n \u001b[90m 64 |\u001b[39m     \u001b[90m// Error state\u001b[39m\n \u001b[90m 65 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mfill(\u001b[32m'#chatId'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m''\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at D:\\Projects\\strands-test\\static\\tests\\e2e\\04-ui-interactions.spec.js:62:43\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-11-21T15:23:17.016Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Projects\\strands-test\\static\\tests\\test-results\\04-ui-interactions-UI-Comp-74218-d-status-messages-correctly-mobile\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Projects\\strands-test\\static\\tests\\test-results\\04-ui-interactions-UI-Comp-74218-d-status-messages-correctly-mobile\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Projects\\strands-test\\static\\tests\\e2e\\04-ui-interactions.spec.js",
+                        "column": 43,
+                        "line": 62
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "f2a4643c79effa60a60e-407db363dc4bcf21e646",
+              "file": "04-ui-interactions.spec.js",
+              "line": 55,
+              "column": 7
+            },
+            {
+              "title": "should handle form input validation and auto-resize",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile",
+                  "projectName": "mobile",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 1495,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m40\u001b[39m\nReceived:   \u001b[31m40\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m40\u001b[39m\nReceived:   \u001b[31m40\u001b[39m\n    at D:\\Projects\\strands-test\\static\\tests\\e2e\\04-ui-interactions.spec.js:91:33",
+                        "location": {
+                          "file": "D:\\Projects\\strands-test\\static\\tests\\e2e\\04-ui-interactions.spec.js",
+                          "column": 33,
+                          "line": 91
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 89 |\u001b[39m     \u001b[90m// Height should increase\u001b[39m\n \u001b[90m 90 |\u001b[39m     \u001b[36mconst\u001b[39m newHeight \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m messageInput\u001b[33m.\u001b[39mevaluate(el \u001b[33m=>\u001b[39m el\u001b[33m.\u001b[39mstyle\u001b[33m.\u001b[39mheight)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 91 |\u001b[39m     expect(parseInt(newHeight))\u001b[33m.\u001b[39mtoBeGreaterThan(parseInt(initialHeight) \u001b[33m||\u001b[39m \u001b[35m40\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 92 |\u001b[39m\n \u001b[90m 93 |\u001b[39m     \u001b[90m// Test chat ID validation\u001b[39m\n \u001b[90m 94 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mfill(\u001b[32m'#chatId'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m''\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Projects\\strands-test\\static\\tests\\e2e\\04-ui-interactions.spec.js",
+                            "column": 33,
+                            "line": 91
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m40\u001b[39m\nReceived:   \u001b[31m40\u001b[39m\n\n\u001b[0m \u001b[90m 89 |\u001b[39m     \u001b[90m// Height should increase\u001b[39m\n \u001b[90m 90 |\u001b[39m     \u001b[36mconst\u001b[39m newHeight \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m messageInput\u001b[33m.\u001b[39mevaluate(el \u001b[33m=>\u001b[39m el\u001b[33m.\u001b[39mstyle\u001b[33m.\u001b[39mheight)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 91 |\u001b[39m     expect(parseInt(newHeight))\u001b[33m.\u001b[39mtoBeGreaterThan(parseInt(initialHeight) \u001b[33m||\u001b[39m \u001b[35m40\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 92 |\u001b[39m\n \u001b[90m 93 |\u001b[39m     \u001b[90m// Test chat ID validation\u001b[39m\n \u001b[90m 94 |\u001b[39m     \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mfill(\u001b[32m'#chatId'\u001b[39m\u001b[33m,\u001b[39m \u001b[32m''\u001b[39m)\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at D:\\Projects\\strands-test\\static\\tests\\e2e\\04-ui-interactions.spec.js:91:33\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-11-21T15:23:20.770Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Projects\\strands-test\\static\\tests\\test-results\\04-ui-interactions-UI-Comp-144fa--validation-and-auto-resize-mobile\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Projects\\strands-test\\static\\tests\\test-results\\04-ui-interactions-UI-Comp-144fa--validation-and-auto-resize-mobile\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Projects\\strands-test\\static\\tests\\e2e\\04-ui-interactions.spec.js",
+                        "column": 33,
+                        "line": 91
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "f2a4643c79effa60a60e-243f1e1a20c04e991404",
+              "file": "04-ui-interactions.spec.js",
+              "line": 80,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "title": "05-error-handling.spec.js",
+      "file": "05-error-handling.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "Error Handling and Resilience",
+          "file": "05-error-handling.spec.js",
+          "line": 8,
+          "column": 6,
+          "specs": [
+            {
+              "title": "should handle network errors gracefully",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 7407,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-11-21T15:22:54.327Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "bb97d63f7f9c508cab43-c1e75f536f038591c7b3",
+              "file": "05-error-handling.spec.js",
+              "line": 14,
+              "column": 7
+            },
+            {
+              "title": "should handle rapid user interactions without breaking",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 3940,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-11-21T15:22:56.013Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "bb97d63f7f9c508cab43-759a3896696e5cc6baca",
+              "file": "05-error-handling.spec.js",
+              "line": 46,
+              "column": 7
+            },
+            {
+              "title": "should handle invalid input gracefully",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 2304,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-11-21T15:22:56.193Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "bb97d63f7f9c508cab43-eccb215327ca6572958d",
+              "file": "05-error-handling.spec.js",
+              "line": 67,
+              "column": 7
+            },
+            {
+              "title": "should maintain application state during errors",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 2408,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at D:\\Projects\\strands-test\\static\\tests\\e2e\\05-error-handling.spec.js:112:44",
+                        "location": {
+                          "file": "D:\\Projects\\strands-test\\static\\tests\\e2e\\05-error-handling.spec.js",
+                          "column": 44,
+                          "line": 112
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 110 |\u001b[39m     expect(appState2\u001b[33m.\u001b[39merror)\u001b[33m.\u001b[39mtoBeUndefined()\u001b[33m;\u001b[39m\n \u001b[90m 111 |\u001b[39m     expect(appState2\u001b[33m.\u001b[39mchatId)\u001b[33m.\u001b[39mtoBe(\u001b[32m'state-test'\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 112 |\u001b[39m     expect(appState2\u001b[33m.\u001b[39mcontrols\u001b[33m.\u001b[39msendEnabled)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                            \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 113 |\u001b[39m     expect(appState2\u001b[33m.\u001b[39mcontrols\u001b[33m.\u001b[39mstopEnabled)\u001b[33m.\u001b[39mtoBe(\u001b[36mfalse\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 114 |\u001b[39m\n \u001b[90m 115 |\u001b[39m     \u001b[90m// Clear and verify state resets properly\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Projects\\strands-test\\static\\tests\\e2e\\05-error-handling.spec.js",
+                            "column": 44,
+                            "line": 112
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n\u001b[0m \u001b[90m 110 |\u001b[39m     expect(appState2\u001b[33m.\u001b[39merror)\u001b[33m.\u001b[39mtoBeUndefined()\u001b[33m;\u001b[39m\n \u001b[90m 111 |\u001b[39m     expect(appState2\u001b[33m.\u001b[39mchatId)\u001b[33m.\u001b[39mtoBe(\u001b[32m'state-test'\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 112 |\u001b[39m     expect(appState2\u001b[33m.\u001b[39mcontrols\u001b[33m.\u001b[39msendEnabled)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                            \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 113 |\u001b[39m     expect(appState2\u001b[33m.\u001b[39mcontrols\u001b[33m.\u001b[39mstopEnabled)\u001b[33m.\u001b[39mtoBe(\u001b[36mfalse\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 114 |\u001b[39m\n \u001b[90m 115 |\u001b[39m     \u001b[90m// Clear and verify state resets properly\u001b[39m\u001b[0m\n\u001b[2m    at D:\\Projects\\strands-test\\static\\tests\\e2e\\05-error-handling.spec.js:112:44\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-11-21T15:22:58.538Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Projects\\strands-test\\static\\tests\\test-results\\05-error-handling-Error-Ha-88fd7-ication-state-during-errors-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Projects\\strands-test\\static\\tests\\test-results\\05-error-handling-Error-Ha-88fd7-ication-state-during-errors-chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Projects\\strands-test\\static\\tests\\e2e\\05-error-handling.spec.js",
+                        "column": 44,
+                        "line": 112
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "bb97d63f7f9c508cab43-440b1bf979db6ecd6fe5",
+              "file": "05-error-handling.spec.js",
+              "line": 95,
+              "column": 7
+            },
+            {
+              "title": "should provide debugging information for development",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 2474,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-11-21T15:23:00.149Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "bb97d63f7f9c508cab43-82bf78e55f1977568ed8",
+              "file": "05-error-handling.spec.js",
+              "line": 123,
+              "column": 7
+            },
+            {
+              "title": "should handle network errors gracefully",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile",
+                  "projectName": "mobile",
+                  "results": [
+                    {
+                      "workerIndex": 9,
+                      "parallelIndex": 2,
+                      "status": "passed",
+                      "duration": 6939,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-11-21T15:23:22.614Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "bb97d63f7f9c508cab43-a9db34c116acb905b58d",
+              "file": "05-error-handling.spec.js",
+              "line": 14,
+              "column": 7
+            },
+            {
+              "title": "should handle rapid user interactions without breaking",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile",
+                  "projectName": "mobile",
+                  "results": [
+                    {
+                      "workerIndex": 10,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 7080,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-11-21T15:23:23.396Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "bb97d63f7f9c508cab43-69ce6cdbc81761fbd3d0",
+              "file": "05-error-handling.spec.js",
+              "line": 46,
+              "column": 7
+            },
+            {
+              "title": "should handle invalid input gracefully",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile",
+                  "projectName": "mobile",
+                  "results": [
+                    {
+                      "workerIndex": 11,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 1570,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-11-21T15:23:30.233Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "bb97d63f7f9c508cab43-74cb7b78509d76b15aad",
+              "file": "05-error-handling.spec.js",
+              "line": 67,
+              "column": 7
+            },
+            {
+              "title": "should maintain application state during errors",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile",
+                  "projectName": "mobile",
+                  "results": [
+                    {
+                      "workerIndex": 9,
+                      "parallelIndex": 2,
+                      "status": "failed",
+                      "duration": 3341,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n    at D:\\Projects\\strands-test\\static\\tests\\e2e\\05-error-handling.spec.js:112:44",
+                        "location": {
+                          "file": "D:\\Projects\\strands-test\\static\\tests\\e2e\\05-error-handling.spec.js",
+                          "column": 44,
+                          "line": 112
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 110 |\u001b[39m     expect(appState2\u001b[33m.\u001b[39merror)\u001b[33m.\u001b[39mtoBeUndefined()\u001b[33m;\u001b[39m\n \u001b[90m 111 |\u001b[39m     expect(appState2\u001b[33m.\u001b[39mchatId)\u001b[33m.\u001b[39mtoBe(\u001b[32m'state-test'\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 112 |\u001b[39m     expect(appState2\u001b[33m.\u001b[39mcontrols\u001b[33m.\u001b[39msendEnabled)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                            \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 113 |\u001b[39m     expect(appState2\u001b[33m.\u001b[39mcontrols\u001b[33m.\u001b[39mstopEnabled)\u001b[33m.\u001b[39mtoBe(\u001b[36mfalse\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 114 |\u001b[39m\n \u001b[90m 115 |\u001b[39m     \u001b[90m// Clear and verify state resets properly\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "D:\\Projects\\strands-test\\static\\tests\\e2e\\05-error-handling.spec.js",
+                            "column": 44,
+                            "line": 112
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32mtrue\u001b[39m\nReceived: \u001b[31mfalse\u001b[39m\n\n\u001b[0m \u001b[90m 110 |\u001b[39m     expect(appState2\u001b[33m.\u001b[39merror)\u001b[33m.\u001b[39mtoBeUndefined()\u001b[33m;\u001b[39m\n \u001b[90m 111 |\u001b[39m     expect(appState2\u001b[33m.\u001b[39mchatId)\u001b[33m.\u001b[39mtoBe(\u001b[32m'state-test'\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 112 |\u001b[39m     expect(appState2\u001b[33m.\u001b[39mcontrols\u001b[33m.\u001b[39msendEnabled)\u001b[33m.\u001b[39mtoBe(\u001b[36mtrue\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                            \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 113 |\u001b[39m     expect(appState2\u001b[33m.\u001b[39mcontrols\u001b[33m.\u001b[39mstopEnabled)\u001b[33m.\u001b[39mtoBe(\u001b[36mfalse\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 114 |\u001b[39m\n \u001b[90m 115 |\u001b[39m     \u001b[90m// Clear and verify state resets properly\u001b[39m\u001b[0m\n\u001b[2m    at D:\\Projects\\strands-test\\static\\tests\\e2e\\05-error-handling.spec.js:112:44\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-11-21T15:23:29.635Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "D:\\Projects\\strands-test\\static\\tests\\test-results\\05-error-handling-Error-Ha-88fd7-ication-state-during-errors-mobile\\test-failed-1.png"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "D:\\Projects\\strands-test\\static\\tests\\test-results\\05-error-handling-Error-Ha-88fd7-ication-state-during-errors-mobile\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "D:\\Projects\\strands-test\\static\\tests\\e2e\\05-error-handling.spec.js",
+                        "column": 44,
+                        "line": 112
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "bb97d63f7f9c508cab43-5dd37921be0e65d94d13",
+              "file": "05-error-handling.spec.js",
+              "line": 95,
+              "column": 7
+            },
+            {
+              "title": "should provide debugging information for development",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 30000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "mobile",
+                  "projectName": "mobile",
+                  "results": [
+                    {
+                      "workerIndex": 10,
+                      "parallelIndex": 1,
+                      "status": "passed",
+                      "duration": 1439,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-11-21T15:23:30.567Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "bb97d63f7f9c508cab43-9854884ea7319d37e3b9",
+              "file": "05-error-handling.spec.js",
+              "line": 123,
+              "column": 7
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2025-11-21T15:22:28.713Z",
+    "duration": 64366.046,
+    "expected": 26,
+    "skipped": 0,
+    "unexpected": 8,
+    "flaky": 0
+  }
+}

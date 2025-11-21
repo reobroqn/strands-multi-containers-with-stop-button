@@ -115,6 +115,10 @@ ENV/
 env.bak/
 venv.bak/
 .claude
+.clavix
+node_modules
+AGENTS.md
+CLAUDE.md
 
 # Spyder project settings
 .spyderproject
@@ -164,6 +168,3 @@ Thumbs.db
 data/sessions/
 logs/
 *.log
-
-# AWS credentials (use ~/.aws instead)
-.aws/
