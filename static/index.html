@@ -3,49 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FastAPI Agent Chat - Test Client</title>
+    <title>FastAPI Agent Chat - Enhanced UI</title>
 
-    <!-- Modular CSS -->
+    <!-- Shadcn/Modern CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tailwindcss/base@latest/base.min.css">
     <link rel="stylesheet" href="assets/styles/global.css">
-    <link rel="stylesheet" href="assets/styles/layouts/main.css">
-    <link rel="stylesheet" href="assets/styles/components/chat-box.css">
-    <link rel="stylesheet" href="assets/styles/components/controls.css">
-    <link rel="stylesheet" href="assets/styles/components/status.css">
+    <link rel="stylesheet" href="assets/styles/enhanced.css">
 </head>
 <body>
-    <div class="container">
-        <h1>🤖 FastAPI Agent Chat</h1>
-        <p class="subtitle">Test the immediate stop functionality across multi-container deployment</p>
-
-        <div class="main-content">
-            <!-- Input Fields Container (to be populated by MessageInput component) -->
-            <div id="inputContainer" class="input-fields-container"></div>
-
-            <!-- Status Indicator -->
-            <div id="status"></div>
-
-            <!-- Chat Box -->
-            <div id="chatBox" class="chat-box"></div>
-
-            <!-- Control Buttons Container (to be populated by ChatControls component) -->
-            <div id="controls" class="controls"></div>
+    <div class="enhanced-container">
+        <div class="enhanced-header">
+            <h1>🤖 FastAPI Agent Chat</h1>
+            <p class="subtitle">Enhanced UI with immediate stop functionality across multi-container deployment</p>
         </div>
 
-        <!-- Information Box -->
-        <div class="info-box">
-            <h3>How to Test the Stop Button:</h3>
-            <ul>
-                <li>1. Enter a message and click "Send Message"</li>
-                <li>2. While the agent is responding, click "Stop Agent"</li>
-                <li>3. The agent should stop immediately (within ~100ms)</li>
-                <li>4. Notice the [STOPPED] message appears</li>
-                <li>5. You can send another message to continue the chat</li>
-            </ul>
-            <p style="margin-top: 10px;"><strong>Architecture:</strong> Nginx → Multiple FastAPI backends → Redis (signal bus)</p>
+        <div class="enhanced-main">
+            <div class="enhanced-chat-section">
+                <!-- Enhanced Input Fields -->
+                <div class="enhanced-input-group">
+                    <label for="chatId">Chat ID</label>
+                    <input type="text" id="chatId" class="enhanced-input" placeholder="Enter a unique chat ID">
+                </div>
+
+                <div class="enhanced-input-group">
+                    <label for="message">Message</label>
+                    <input type="text" id="message" class="enhanced-input" placeholder="Type your message here...">
+                </div>
+
+                <!-- Enhanced Status -->
+                <div id="status" class="enhanced-status">
+                    <div class="flex items-center gap-2">
+                        <span class="spinner" id="statusSpinner" style="display: none;"></span>
+                        <span id="statusText">Ready to chat</span>
+                    </div>
+                </div>
+
+                <!-- Enhanced Chat Box -->
+                <div id="chatBox" class="enhanced-chat-box">
+                    <div class="enhanced-message enhanced-message-system">
+                        <strong>Welcome!</strong> Enter a message to start chatting with the AI agent.
+                    </div>
+                </div>
+
+                <!-- Enhanced Control Buttons -->
+                <div class="enhanced-controls">
+                    <button id="sendBtn" class="enhanced-button enhanced-button-primary">
+                        <span>📤</span> Send Message
+                    </button>
+                    <button id="stopBtn" class="enhanced-button enhanced-button-danger" disabled>
+                        <span>⏹️</span> Stop Agent
+                    </button>
+                    <button id="clearBtn" class="enhanced-button enhanced-button-secondary">
+                        <span>🗑️</span> Clear Chat
+                    </button>
+                </div>
+            </div>
+
+            <div class="enhanced-sidebar">
+                <div class="enhanced-info-box">
+                    <h3>🚀 How to Test the Stop Button:</h3>
+                    <ul>
+                        <li>1. Enter a message and click "Send Message"</li>
+                        <li>2. While the agent is responding, click "Stop Agent"</li>
+                        <li>3. The agent should stop immediately (within ~100ms)</li>
+                        <li>4. Notice the [STOPPED] message appears</li>
+                        <li>5. You can send another message to continue the chat</li>
+                    </ul>
+                </div>
+
+                <div class="enhanced-info-box">
+                    <h3>🏗️ Architecture:</h3>
+                    <ul>
+                        <li>Nginx → Multiple FastAPI backends</li>
+                        <li>Redis for signal coordination</li>
+                        <li>Immediate agent termination</li>
+                        <li>Real-time streaming responses</li>
+                    </ul>
+                </div>
+
+                <div class="enhanced-info-box">
+                    <h3>⌨️ Keyboard Shortcuts:</h3>
+                    <ul>
+                        <li><kbd>Enter</kbd> - Send message</li>
+                        <li><kbd>Escape</kbd> - Stop agent</li>
+                        <li><kbd>Ctrl/Cmd + K</kbd> - Clear chat</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 
-    <!-- Application Entry Point -->
+    <!-- Enhanced Application Entry Point -->
     <script type="module" src="app.js"></script>
 </body>
 </html>

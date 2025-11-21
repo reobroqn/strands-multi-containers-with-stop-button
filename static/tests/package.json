@@ -16,7 +16,7 @@
     "install:deps": "npx playwright install"
   },
   "devDependencies": {
-    "@playwright/test": "^1.40.0",
+    "@playwright/test": "^1.56.1",
     "playwright": "^1.40.0"
   },
   "keywords": [
