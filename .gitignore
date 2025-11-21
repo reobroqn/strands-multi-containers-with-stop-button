@@ -115,6 +115,10 @@ ENV/
 env.bak/
 venv.bak/
 .claude
+.clavix
+node_modules
+AGENTS.md
+CLAUDE.md
 
 # Spyder project settings
 .spyderproject
