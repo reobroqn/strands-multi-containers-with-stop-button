@@ -17,6 +17,11 @@ async def lifespan(app: FastAPI):
     # Initialize Redis
     await RedisClient.initialize()
 
+    # Verify Redis is available
+    if not await RedisClient.ping():
+        logger.error("Redis unavailable at startup")
+        raise RuntimeError("Redis service unavailable")
+
     yield
 
     # Cleanup
@@ -41,7 +46,7 @@ app.add_middleware(
     allow_headers=["*"],
 )
 
-# API router
+# API router (includes chat, stop, and ag-ui endpoints)
 app.include_router(api_router, prefix="/api/v1")
 
 # Static files (mount last to avoid conflicts)

@@ -1,0 +1,37 @@
+{
+  "name": "fastapi-agent-chat-frontend",
+  "version": "1.0.0",
+  "description": "Modular frontend for FastAPI Agent Chat application",
+  "type": "module",
+  "main": "index.html",
+  "scripts": {
+    "dev": "python -m http.server 8080 --directory static",
+    "build": "echo 'Frontend is already modular - no build step required'",
+    "lint": "eslint static/components static/services static/utils --ext .js",
+    "format": "prettier --write static/components static/services static/utils static/assets/styles/**/*.css"
+  },
+  "keywords": [
+    "fastapi",
+    "agent",
+    "chat",
+    "modular",
+    "frontend",
+    "sse",
+    "streaming"
+  ],
+  "author": "FastAPI Agent Chat Team",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "eslint": "^8.55.0",
+    "prettier": "^3.1.0"
+  },
+  "dependencies": {
+    "shadcn-ui": "^0.8.0"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead"
+  ]
+}

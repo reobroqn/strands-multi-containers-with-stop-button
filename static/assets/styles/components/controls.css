@@ -1,0 +1,322 @@
+/**
+ * Controls Component Styles
+ * Styles for buttons, input fields, and form controls
+ */
+
+/* Input Groups */
+.input-group {
+    margin-bottom: var(--spacing-xl);
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: var(--spacing-xs);
+    color: #555;
+    font-weight: 500;
+    font-size: var(--font-size-base);
+}
+
+/* Text Input Fields */
+input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: var(--border-radius);
+    font-size: var(--font-size-base);
+    transition: var(--transition);
+    background: white;
+    font-family: var(--font-family);
+}
+
+input[type="text"]:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+}
+
+input[type="text"]:disabled {
+    background: var(--light-gray);
+    border-color: var(--border-color);
+    color: var(--medium-gray);
+    cursor: not-allowed;
+}
+
+input[type="text"]::placeholder {
+    color: #999;
+    font-style: italic;
+}
+
+/* Controls Container */
+.controls {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-xl);
+    flex-wrap: wrap;
+}
+
+/* Button Base Styles */
+button {
+    padding: 12px 24px;
+    border: none;
+    border-radius: var(--border-radius);
+    font-size: var(--font-size-base);
+    font-weight: 600;
+    cursor: pointer;
+    transition: var(--transition);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-family: var(--font-family);
+    position: relative;
+    overflow: hidden;
+}
+
+button:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+    transform: none !important;
+    box-shadow: none !important;
+}
+
+/* Send Button */
+.send-btn {
+    background: var(--primary-color);
+    color: white;
+    flex: 1;
+    min-width: 120px;
+}
+
+.send-btn:hover:not(:disabled) {
+    background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--box-shadow-hover);
+}
+
+.send-btn:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+/* Stop Button */
+.stop-btn {
+    background: var(--danger-color);
+    color: white;
+    min-width: 120px;
+}
+
+.stop-btn:hover:not(:disabled) {
+    background: var(--danger-dark);
+    transform: translateY(-2px);
+    box-shadow: var(--box-shadow-hover);
+}
+
+.stop-btn:active:not(:disabled) {
+    transform: translateY(0);
+}
+
+/* Clear Button */
+.clear-btn {
+    background: var(--gray-color);
+    color: white;
+    min-width: 100px;
+}
+
+.clear-btn:hover {
+    background: var(--gray-dark);
+    transform: translateY(-1px);
+}
+
+.clear-btn:active {
+    transform: translateY(0);
+}
+
+/* Button Loading State */
+button.loading {
+    color: transparent;
+    pointer-events: none;
+}
+
+button.loading::after {
+    content: "";
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    top: 50%;
+    left: 50%;
+    margin-left: -8px;
+    margin-top: -8px;
+    border: 2px solid #ffffff;
+    border-radius: 50%;
+    border-top-color: transparent;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Button Success State */
+button.success {
+    background: #28a745;
+    animation: successPulse 0.5s ease;
+}
+
+@keyframes successPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(40, 167, 69, 0.7);
+    }
+
+    70% {
+        box-shadow: 0 0 0 10px rgba(40, 167, 69, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(40, 167, 69, 0);
+    }
+}
+
+/* Button Error State */
+button.error {
+    background: var(--danger-color);
+    animation: errorShake 0.5s ease;
+}
+
+@keyframes errorShake {
+
+    0%,
+    100% {
+        transform: translateX(0);
+    }
+
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        transform: translateX(-5px);
+    }
+
+    20%,
+    40%,
+    60%,
+    80% {
+        transform: translateX(5px);
+    }
+}
+
+/* Button Variants */
+.btn-secondary {
+    background: transparent;
+    color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+}
+
+.btn-secondary:hover:not(:disabled) {
+    background: var(--primary-color);
+    color: white;
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--gray-color);
+    border: 2px solid var(--gray-color);
+}
+
+.btn-outline:hover:not(:disabled) {
+    background: var(--gray-color);
+    color: white;
+}
+
+/* Responsive Controls */
+@media (max-width: 768px) {
+    .controls {
+        flex-direction: column;
+        gap: var(--spacing-md);
+    }
+
+    button {
+        padding: 14px 20px;
+        font-size: 16px;
+    }
+
+    .send-btn {
+        order: 1;
+    }
+
+    .stop-btn {
+        order: 2;
+    }
+
+    .clear-btn {
+        order: 3;
+    }
+}
+
+@media (max-width: 480px) {
+    .input-group {
+        margin-bottom: var(--spacing-lg);
+    }
+
+    input[type="text"] {
+        padding: 10px;
+        font-size: 16px;
+        /* Prevents zoom on iOS */
+    }
+
+    .controls {
+        margin-bottom: var(--spacing-lg);
+    }
+
+    button {
+        padding: 12px 16px;
+        font-size: 14px;
+    }
+}
+
+/* High Contrast Mode Support */
+@media (prefers-contrast: high) {
+    input[type="text"] {
+        border: 3px solid #000;
+        background: #fff;
+        color: #000;
+    }
+
+    button {
+        border: 3px solid #000;
+    }
+
+    .send-btn {
+        background: #000;
+        color: #fff;
+    }
+
+    .stop-btn {
+        background: #f00;
+        color: #fff;
+    }
+}
+
+/* Reduced Motion Support */
+@media (prefers-reduced-motion: reduce) {
+    button {
+        transition: none;
+    }
+
+    button:hover:not(:disabled) {
+        transform: none;
+    }
+
+    .send-btn.loading::after {
+        animation: none;
+    }
+
+    button.success,
+    button.error {
+        animation: none;
+    }
+}

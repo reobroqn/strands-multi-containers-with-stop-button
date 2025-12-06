@@ -29,6 +29,7 @@ dependencies = [
     "boto3>=1.35.0",
     "ruff>=0.8.0",
     "mypy>=1.13.0",
+    "ag-ui-protocol>=0.1.10",
 ]
 
 [tool.ruff]
@@ -97,39 +98,3 @@ line-ending = "auto"
 
 # Format docstrings
 docstring-code-format = true
-
-[tool.mypy]
-# Python version
-python_version = "3.13"
-
-# Strictness
-strict = false
-warn_return_any = true
-warn_unused_configs = true
-warn_redundant_casts = true
-warn_unused_ignores = false
-strict_equality = true
-check_untyped_defs = true
-
-# Import behavior
-ignore_missing_imports = true
-namespace_packages = true
-explicit_package_bases = true
-
-# Output
-show_error_codes = true
-show_column_numbers = true
-pretty = true
-color_output = true
-
-# Caching
-cache_dir = ".mypy_cache"
-sqlite_cache = true
-
-# Exclude patterns
-exclude = [
-    "^build/",
-    "^dist/",
-    "^logs/",
-    "^data/",
-]

@@ -3,6 +3,18 @@ revision = 1
 requires-python = "==3.13.*"
 
 [[package]]
+name = "ag-ui-protocol"
+version = "0.1.10"
+source = { registry = "https://pypi.org/simple" }
+dependencies = [
+    { name = "pydantic" },
+]
+sdist = { url = "https://files.pythonhosted.org/packages/67/bb/5a5ec893eea5805fb9a3db76a9888c3429710dfb6f24bbb37568f2cf7320/ag_ui_protocol-0.1.10.tar.gz", hash = "sha256:3213991c6b2eb24bb1a8c362ee270c16705a07a4c5962267a083d0959ed894f4", size = 6945 }
+wheels = [
+    { url = "https://files.pythonhosted.org/packages/8f/78/eb55fabaab41abc53f52c0918a9a8c0f747807e5306273f51120fd695957/ag_ui_protocol-0.1.10-py3-none-any.whl", hash = "sha256:c81e6981f30aabdf97a7ee312bfd4df0cd38e718d9fc10019c7d438128b93ab5", size = 7889 },
+]
+
+[[package]]
 name = "aiofiles"
 version = "25.1.0"
 source = { registry = "https://pypi.org/simple" }
@@ -366,6 +378,7 @@ name = "fastapi-agent-chat"
 version = "0.1.0"
 source = { virtual = "." }
 dependencies = [
+    { name = "ag-ui-protocol" },
     { name = "aiofiles" },
     { name = "asyncio-redis" },
     { name = "boto3" },
@@ -383,6 +396,7 @@ dependencies = [
 
 [package.metadata]
 requires-dist = [
+    { name = "ag-ui-protocol", specifier = ">=0.1.10" },
     { name = "aiofiles", specifier = ">=23.0.0" },
     { name = "asyncio-redis", specifier = ">=0.9.0" },
     { name = "boto3", specifier = ">=1.35.0" },
@@ -1465,7 +1479,7 @@ wheels = [
 
 [[package]]
 name = "strands-agents"
-version = "1.14.0"
+version = "1.19.0"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "boto3" },
@@ -1480,9 +1494,9 @@ dependencies = [
     { name = "typing-extensions" },
     { name = "watchdog" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/26/dd/a2dc96614bb1dd7c1623cbdf6df268eb307038b2fe27bc5a6148f4223f59/strands_agents-1.14.0.tar.gz", hash = "sha256:f86dd2b92d50196acd0c5ff5404fcd1b6c3715ae56fcceb2a78210ab47860585", size = 471216 }
+sdist = { url = "https://files.pythonhosted.org/packages/40/2a/1da9a1edf822a2b491bedcc9b204a879e19825a730b1c06f9617d8b70109/strands_agents-1.19.0.tar.gz", hash = "sha256:20226330640c1afc6985a6e77a2dc394416c05ace51de5ac0ddeb1fed9c86f4a", size = 602767 }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/8f/08/848c26d917d8f75bc10edeea63578af218df5c6efeb69e3cf91eb8fd396e/strands_agents-1.14.0-py3-none-any.whl", hash = "sha256:d2ebc1b991c37e891cfe79cf5dea1bfa021c3e6d93e4d2f238042ea688019bf3", size = 238974 },
+    { url = "https://files.pythonhosted.org/packages/7a/3f/6c0413336375e6c90ae646799641b51b8c7b69755554013571afb66f66ab/strands_agents-1.19.0-py3-none-any.whl", hash = "sha256:94823e95d5abfcc0108c1d6d17e2d46a55848c7d94428beae591de3be75de0d5", size = 316834 },
 ]
 
 [package.optional-dependencies]

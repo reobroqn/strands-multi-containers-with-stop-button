@@ -1,0 +1,200 @@
+/**
+ * Global Styles
+ * Base styles and CSS variables for the FastAPI Agent Chat application
+ */
+
+/* CSS Variables */
+:root {
+    --primary-color: #667eea;
+    --primary-dark: #5568d3;
+    --secondary-color: #764ba2;
+    --danger-color: #dc3545;
+    --danger-dark: #c82333;
+    --gray-color: #6c757d;
+    --gray-dark: #5a6268;
+
+    --success-bg: #d4edda;
+    --success-color: #155724;
+    --warning-bg: #fff3cd;
+    --warning-color: #856404;
+    --error-bg: #f8d7da;
+    --error-color: #721c24;
+    --info-bg: #d1ecf1;
+    --info-color: #0c5460;
+
+    --light-gray: #f8f9fa;
+    --border-color: #e9ecef;
+    --dark-gray: #333;
+    --medium-gray: #666;
+
+    --border-radius: 5px;
+    --border-radius-large: 10px;
+    --transition: all 0.3s;
+    --box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    --box-shadow-hover: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+    --font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    --font-family-mono: 'Courier New', monospace;
+    --font-size-small: 13px;
+    --font-size-base: 14px;
+    --font-size-large: 16px;
+    --font-size-xl: 28px;
+
+    --spacing-xs: 5px;
+    --spacing-sm: 8px;
+    --spacing-md: 10px;
+    --spacing-lg: 15px;
+    --spacing-xl: 20px;
+    --spacing-xxl: 30px;
+}
+
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-family);
+    background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--spacing-xl);
+    line-height: 1.5;
+}
+
+/* Typography */
+h1 {
+    color: var(--dark-gray);
+    margin-bottom: var(--spacing-xs);
+    font-size: var(--font-size-xl);
+    font-weight: 600;
+}
+
+h2 {
+    color: var(--dark-gray);
+    margin-bottom: var(--spacing-md);
+    font-size: var(--font-size-large);
+}
+
+h3 {
+    color: var(--dark-gray);
+    margin-bottom: var(--spacing-sm);
+    font-size: var(--font-size-large);
+}
+
+h4 {
+    color: var(--dark-gray);
+    margin-bottom: var(--spacing-xs);
+    font-size: var(--font-size-base);
+}
+
+p {
+    margin-bottom: var(--spacing-md);
+    color: var(--medium-gray);
+}
+
+/* Utility Classes */
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.hidden {
+    display: none;
+}
+
+.visible {
+    display: block;
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 0.3s ease-in forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+.slide-up {
+    transform: translateY(20px);
+    opacity: 0;
+    animation: slideUp 0.3s ease-out forwards;
+}
+
+@keyframes slideUp {
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+/* Focus and Accessibility */
+:focus {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+}
+
+:focus:not(:focus-visible) {
+    outline: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    body {
+        padding: var(--spacing-md);
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .container {
+        padding: var(--spacing-xl) var(--spacing-lg);
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: var(--spacing-sm);
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    .container {
+        padding: var(--spacing-lg) var(--spacing-md);
+    }
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background: white;
+        padding: 0;
+    }
+
+    .container {
+        box-shadow: none;
+        border: 1px solid #ccc;
+    }
+
+    .controls,
+    .info-box {
+        display: none;
+    }
+}

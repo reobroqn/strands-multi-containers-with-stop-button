@@ -1,0 +1,214 @@
+/**
+ * Chat Box Component Styles
+ * Styles for the chat display area and message bubbles
+ */
+
+.chat-box {
+    background: var(--light-gray);
+    border: 2px solid var(--border-color);
+    border-radius: var(--border-radius);
+    padding: var(--spacing-lg);
+    min-height: 200px;
+    max-height: 400px;
+    overflow-y: auto;
+    margin-bottom: var(--spacing-xl);
+    font-family: var(--font-family-mono);
+    font-size: var(--font-size-base);
+    scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar for Chat Box */
+.chat-box::-webkit-scrollbar {
+    width: 8px;
+}
+
+.chat-box::-webkit-scrollbar-track {
+    background: var(--light-gray);
+    border-radius: 4px;
+}
+
+.chat-box::-webkit-scrollbar-thumb {
+    background: var(--primary-color);
+    border-radius: 4px;
+}
+
+.chat-box::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-dark);
+}
+
+/* Message Styles */
+.message {
+    margin-bottom: var(--spacing-md);
+    padding: var(--spacing-sm);
+    border-radius: var(--border-radius);
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    line-height: 1.4;
+    animation: messageSlide 0.2s ease-out;
+}
+
+@keyframes messageSlide {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* User Message */
+.user-message {
+    background: var(--info-bg);
+    color: var(--info-color);
+    border-left: 4px solid var(--primary-color);
+}
+
+/* Bot Message */
+.bot-message {
+    background: var(--success-bg);
+    color: var(--success-color);
+    border-left: 4px solid #28a745;
+}
+
+/* System Message */
+.system-message {
+    background: var(--error-bg);
+    color: var(--error-color);
+    border-left: 4px solid var(--danger-color);
+    font-style: italic;
+}
+
+/* Message Content Styling */
+.user-message strong {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.bot-message strong {
+    color: #28a745;
+    font-weight: 600;
+}
+
+.system-message strong {
+    color: var(--danger-color);
+    font-weight: 600;
+}
+
+/* Message Timestamp */
+.message-timestamp {
+    font-size: 11px;
+    color: var(--medium-gray);
+    margin-top: var(--spacing-xs);
+    opacity: 0.7;
+}
+
+/* Typing Indicator */
+.typing-indicator {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    padding: var(--spacing-xs);
+}
+
+.typing-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--primary-color);
+    border-radius: 50%;
+    animation: typingPulse 1.4s infinite ease-in-out;
+}
+
+.typing-dot:nth-child(1) { animation-delay: -0.32s; }
+.typing-dot:nth-child(2) { animation-delay: -0.16s; }
+
+@keyframes typingPulse {
+    0%, 80%, 100% {
+        opacity: 0.3;
+        transform: scale(0.8);
+    }
+    40% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Message Status Indicators */
+.message-status {
+    display: inline-flex;
+    align-items: center;
+    gap: var(--spacing-xs);
+    font-size: 11px;
+    color: var(--medium-gray);
+    margin-left: var(--spacing-xs);
+}
+
+.status-icon {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+}
+
+.status-sent {
+    background: var(--success-color);
+}
+
+.status-error {
+    background: var(--danger-color);
+}
+
+.status-sending {
+    background: var(--warning-color);
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.5;
+    }
+}
+
+/* Empty State */
+.chat-box.empty::before {
+    content: "No messages yet. Start a conversation!";
+    display: block;
+    text-align: center;
+    color: var(--medium-gray);
+    font-style: italic;
+    padding: var(--spacing-xl);
+    font-family: var(--font-family);
+}
+
+/* Loading State */
+.chat-box.loading {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+/* Responsive Chat Box */
+@media (max-width: 768px) {
+    .chat-box {
+        min-height: 150px;
+        max-height: 300px;
+        padding: var(--spacing-md);
+        margin-bottom: var(--spacing-lg);
+    }
+}
+
+@media (max-width: 480px) {
+    .chat-box {
+        min-height: 120px;
+        max-height: 250px;
+        padding: var(--spacing-sm);
+        font-size: 13px;
+    }
+
+    .message {
+        margin-bottom: var(--spacing-sm);
+        padding: 6px;
+    }
+}

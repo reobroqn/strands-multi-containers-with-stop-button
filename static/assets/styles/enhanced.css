@@ -1,0 +1,306 @@
+/* Enhanced Modern Styles for FastAPI Agent Chat */
+
+:root {
+    --primary: #3b82f6;
+    --primary-foreground: #ffffff;
+    --secondary: #f1f5f9;
+    --secondary-foreground: #0f172a;
+    --muted: #f8fafc;
+    --muted-foreground: #64748b;
+    --accent: #f1f5f9;
+    --accent-foreground: #0f172a;
+    --destructive: #ef4444;
+    --destructive-foreground: #ffffff;
+    --border: #e2e8f0;
+    --input: #ffffff;
+    --background: #ffffff;
+    --foreground: #0f172a;
+    --ring: #3b82f6;
+}
+
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.enhanced-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    backdrop-filter: blur(10px);
+}
+
+.enhanced-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.enhanced-header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 10px;
+}
+
+.enhanced-main {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.enhanced-chat-section {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.enhanced-sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.enhanced-chat-box {
+    background: white;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+    min-height: 400px;
+    max-height: 600px;
+    overflow-y: auto;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.enhanced-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 16px;
+}
+
+.enhanced-input-group label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--foreground);
+}
+
+.enhanced-input {
+    padding: 12px 16px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    font-size: 0.875rem;
+    transition: all 0.2s;
+    background: var(--background);
+}
+
+.enhanced-input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px var(--ring);
+}
+
+.enhanced-button {
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.875rem;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.enhanced-button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.enhanced-button-primary {
+    background: var(--primary);
+    color: var(--primary-foreground);
+}
+
+.enhanced-button-primary:hover:not(:disabled) {
+    background: #2563eb;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.3);
+}
+
+.enhanced-button-danger {
+    background: var(--destructive);
+    color: var(--destructive-foreground);
+}
+
+.enhanced-button-danger:hover:not(:disabled) {
+    background: #dc2626;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+.enhanced-button-secondary {
+    background: var(--secondary);
+    color: var(--secondary-foreground);
+}
+
+.enhanced-button-secondary:hover:not(:disabled) {
+    background: #e2e8f0;
+    transform: translateY(-1px);
+}
+
+.enhanced-controls {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.enhanced-status {
+    background: var(--muted);
+    border-radius: 8px;
+    padding: 16px;
+    border: 1px solid var(--border);
+}
+
+.enhanced-status-connected {
+    background: #dcfce7;
+    color: #166534;
+    border-color: #22c55e;
+}
+
+.enhanced-status-error {
+    background: #fef2f2;
+    color: #991b1b;
+    border-color: #ef4444;
+}
+
+.enhanced-message {
+    margin-bottom: 12px;
+    padding: 12px 16px;
+    border-radius: 8px;
+    animation: messageSlideIn 0.3s ease-out;
+}
+
+@keyframes messageSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.enhanced-message-user {
+    background: var(--primary);
+    color: var(--primary-foreground);
+    margin-left: 40px;
+}
+
+.enhanced-message-bot {
+    background: var(--secondary);
+    color: var(--secondary-foreground);
+    margin-right: 40px;
+}
+
+.enhanced-message-system {
+    background: var(--muted);
+    color: var(--muted-foreground);
+    text-align: center;
+    font-style: italic;
+}
+
+.enhanced-message-error {
+    background: var(--destructive);
+    color: var(--destructive-foreground);
+}
+
+.enhanced-info-box {
+    background: var(--muted);
+    border-radius: 8px;
+    padding: 16px;
+    border: 1px solid var(--border);
+}
+
+.enhanced-info-box h3 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: var(--foreground);
+}
+
+.enhanced-info-box ul {
+    margin: 0;
+    padding-left: 20px;
+    color: var(--muted-foreground);
+    font-size: 0.875rem;
+}
+
+.enhanced-info-box li {
+    margin-bottom: 4px;
+}
+
+.typing-indicator {
+    display: inline-block;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .enhanced-main {
+        grid-template-columns: 1fr;
+    }
+
+    .enhanced-container {
+        margin: 10px;
+        padding: 15px;
+    }
+
+    .enhanced-header h1 {
+        font-size: 2rem;
+    }
+}
+
+/* Loading spinner */
+.spinner {
+    border: 2px solid #f3f3f3;
+    border-top: 2px solid var(--primary);
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    animation: spin 1s linear infinite;
+    display: inline-block;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Flex utilities for the sidebar flex items */
+.flex {
+    display: flex;
+}
+
+.flex-items-center {
+    align-items: center;
+}
+
+.gap-2 {
+    gap: 0.5rem;
+}

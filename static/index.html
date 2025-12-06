@@ -1,429 +1,102 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FastAPI Agent Chat - Test Client</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    <title>FastAPI Agent Chat - Enhanced UI</title>
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            padding: 20px;
-        }
-
-        .container {
-            background: white;
-            border-radius: 10px;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
-            max-width: 800px;
-            width: 100%;
-            padding: 30px;
-        }
-
-        h1 {
-            color: #333;
-            margin-bottom: 10px;
-            font-size: 28px;
-        }
-
-        .subtitle {
-            color: #666;
-            margin-bottom: 30px;
-            font-size: 14px;
-        }
-
-        .input-group {
-            margin-bottom: 20px;
-        }
-
-        label {
-            display: block;
-            margin-bottom: 5px;
-            color: #555;
-            font-weight: 500;
-        }
-
-        input[type="text"] {
-            width: 100%;
-            padding: 12px;
-            border: 2px solid #ddd;
-            border-radius: 5px;
-            font-size: 14px;
-            transition: border-color 0.3s;
-        }
-
-        input[type="text"]:focus {
-            outline: none;
-            border-color: #667eea;
-        }
-
-        .chat-box {
-            background: #f8f9fa;
-            border: 2px solid #e9ecef;
-            border-radius: 5px;
-            padding: 15px;
-            min-height: 200px;
-            max-height: 400px;
-            overflow-y: auto;
-            margin-bottom: 20px;
-            font-family: 'Courier New', monospace;
-            font-size: 14px;
-        }
-
-        .message {
-            margin-bottom: 10px;
-            padding: 8px;
-            border-radius: 4px;
-            white-space: pre-wrap;
-            word-wrap: break-word;
-        }
-
-        .user-message {
-            background: #d1ecf1;
-            color: #0c5460;
-        }
-
-        .bot-message {
-            background: #d4edda;
-            color: #155724;
-        }
-
-        .system-message {
-            background: #f8d7da;
-            color: #721c24;
-        }
-
-        .controls {
-            display: flex;
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-
-        button {
-            padding: 12px 24px;
-            border: none;
-            border-radius: 5px;
-            font-size: 14px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        button:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-        }
-
-        .send-btn {
-            background: #667eea;
-            color: white;
-            flex: 1;
-        }
-
-        .send-btn:hover:not(:disabled) {
-            background: #5568d3;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .stop-btn {
-            background: #dc3545;
-            color: white;
-        }
-
-        .stop-btn:hover:not(:disabled) {
-            background: #c82333;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .clear-btn {
-            background: #6c757d;
-            color: white;
-        }
-
-        .clear-btn:hover {
-            background: #5a6268;
-        }
-
-        .status {
-            padding: 10px;
-            border-radius: 5px;
-            margin-bottom: 20px;
-            font-weight: 500;
-            display: none;
-        }
-
-        .status.active {
-            display: block;
-        }
-
-        .status.connecting {
-            background: #fff3cd;
-            color: #856404;
-        }
-
-        .status.connected {
-            background: #d4edda;
-            color: #155724;
-        }
-
-        .status.error {
-            background: #f8d7da;
-            color: #721c24;
-        }
-
-        .info-box {
-            background: #e7f3ff;
-            border-left: 4px solid #667eea;
-            padding: 15px;
-            margin-top: 20px;
-            font-size: 13px;
-            color: #004085;
-        }
-
-        .info-box h3 {
-            margin-bottom: 10px;
-            font-size: 16px;
-        }
-
-        .info-box ul {
-            margin-left: 20px;
-        }
-
-        .info-box li {
-            margin-bottom: 5px;
-        }
-    </style>
+    <!-- Shadcn/Modern CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tailwindcss/base@latest/base.min.css">
+    <link rel="stylesheet" href="assets/styles/global.css">
+    <link rel="stylesheet" href="assets/styles/enhanced.css">
 </head>
+
 <body>
-    <div class="container">
-        <h1>🤖 FastAPI Agent Chat</h1>
-        <p class="subtitle">Test the immediate stop functionality across multi-container deployment</p>
-
-        <div class="input-group">
-            <label for="chatId">Chat ID</label>
-            <input type="text" id="chatId" value="test-chat-001" placeholder="Enter a unique chat ID">
+    <div class="enhanced-container">
+        <div class="enhanced-header">
+            <h1>🤖 FastAPI Agent Chat</h1>
+            <p class="subtitle">Enhanced UI with immediate stop functionality across multi-container deployment</p>
         </div>
 
-        <div class="status" id="status"></div>
+        <div class="enhanced-main">
+            <div class="enhanced-chat-section">
+                <!-- Enhanced Input Fields -->
+                <div class="enhanced-input-group">
+                    <label for="chatId">Chat ID</label>
+                    <input type="text" id="chatId" class="enhanced-input" placeholder="Enter a unique chat ID">
+                </div>
 
-        <div class="chat-box" id="chatBox">
-            <div class="message system-message">Welcome! Enter a message and click Send to start chatting with the agent.</div>
-        </div>
+                <div class="enhanced-input-group">
+                    <label for="message">Message</label>
+                    <input type="text" id="message" class="enhanced-input" placeholder="Type your message here...">
+                </div>
 
-        <div class="controls">
-            <button class="send-btn" id="sendBtn" onclick="sendMessage()">Send Message</button>
-            <button class="stop-btn" id="stopBtn" onclick="stopChat()" disabled>⏹️ Stop Agent</button>
-            <button class="clear-btn" onclick="clearChat()">Clear Chat</button>
-        </div>
+                <!-- Enhanced Status -->
+                <div id="status" class="enhanced-status">
+                    <div class="flex items-center gap-2">
+                        <span class="spinner" id="statusSpinner" style="display: none;"></span>
+                        <span id="statusText">Ready to chat</span>
+                    </div>
+                </div>
 
-        <div class="info-box">
-            <h3>How to Test the Stop Button:</h3>
-            <ul>
-                <li>1. Enter a message and click "Send Message"</li>
-                <li>2. While the agent is responding, click "Stop Agent"</li>
-                <li>3. The agent should stop immediately (within ~100ms)</li>
-                <li>4. Notice the [STOPPED] message appears</li>
-                <li>5. You can send another message to continue the chat</li>
-            </ul>
-            <p style="margin-top: 10px;"><strong>Architecture:</strong> Nginx → Multiple FastAPI backends → Redis (signal bus)</p>
+                <!-- Enhanced Chat Box -->
+                <div id="chatBox" class="enhanced-chat-box">
+                    <div class="enhanced-message enhanced-message-system">
+                        <strong>Welcome!</strong> Enter a message to start chatting with the AI agent.
+                    </div>
+                </div>
+
+                <!-- Enhanced Control Buttons -->
+                <div class="enhanced-controls">
+                    <button id="sendBtn" class="enhanced-button enhanced-button-primary">
+                        <span>📤</span> Send Message
+                    </button>
+                    <button id="stopBtn" class="enhanced-button enhanced-button-danger" disabled>
+                        <span>⏹️</span> Stop Agent
+                    </button>
+                    <button id="clearBtn" class="enhanced-button enhanced-button-secondary">
+                        <span>🗑️</span> Clear Chat
+                    </button>
+                </div>
+            </div>
+
+            <div class="enhanced-sidebar">
+                <div class="enhanced-info-box">
+                    <h3>🚀 How to Test the Stop Button:</h3>
+                    <ul>
+                        <li>1. Enter a message and click "Send Message"</li>
+                        <li>2. While the agent is responding, click "Stop Agent"</li>
+                        <li>3. The agent should stop immediately (within ~100ms)</li>
+                        <li>4. Notice the [STOPPED] message appears</li>
+                        <li>5. You can send another message to continue the chat</li>
+                    </ul>
+                </div>
+
+                <div class="enhanced-info-box">
+                    <h3>🏗️ Architecture:</h3>
+                    <ul>
+                        <li>Nginx → Multiple FastAPI backends</li>
+                        <li>Redis for signal coordination</li>
+                        <li>Immediate agent termination</li>
+                        <li>Real-time streaming responses</li>
+                    </ul>
+                </div>
+
+                <div class="enhanced-info-box">
+                    <h3>⌨️ Keyboard Shortcuts:</h3>
+                    <ul>
+                        <li><kbd>Enter</kbd> - Send message</li>
+                        <li><kbd>Escape</kbd> - Stop agent</li>
+                        <li><kbd>Ctrl/Cmd + K</kbd> - Clear chat</li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </div>
 
-    <script>
-        let eventSource = null;
-        let currentChatId = null;
-
-        function showStatus(message, type) {
-            const statusDiv = document.getElementById('status');
-            statusDiv.textContent = message;
-            statusDiv.className = 'status active ' + type;
-        }
-
-        function hideStatus() {
-            document.getElementById('status').className = 'status';
-        }
-
-        function addMessage(message, type) {
-            const chatBox = document.getElementById('chatBox');
-            const messageDiv = document.createElement('div');
-            messageDiv.className = `message ${type}`;
-            messageDiv.textContent = message;
-            chatBox.appendChild(messageDiv);
-            chatBox.scrollTop = chatBox.scrollHeight;
-        }
-
-        function clearChat() {
-            const chatBox = document.getElementById('chatBox');
-            chatBox.innerHTML = '<div class="message system-message">Chat cleared. Enter a new message to start.</div>';
-            hideStatus();
-
-            if (eventSource) {
-                eventSource.close();
-                eventSource = null;
-            }
-
-            document.getElementById('sendBtn').disabled = false;
-            document.getElementById('stopBtn').disabled = true;
-        }
-
-        async function sendMessage() {
-            const chatId = document.getElementById('chatId').value.trim();
-            const messageInput = document.getElementById('messageInput');
-
-            // Create message input if it doesn't exist
-            if (!messageInput) {
-                const inputGroup = document.createElement('div');
-                inputGroup.className = 'input-group';
-                inputGroup.innerHTML = `
-                    <label for="messageInput">Message</label>
-                    <input type="text" id="messageInput" placeholder="Type your message here...">
-                `;
-                document.querySelector('.input-group').after(inputGroup);
-            }
-
-            const message = document.getElementById('messageInput').value.trim();
-
-            if (!chatId) {
-                showStatus('Please enter a Chat ID', 'error');
-                return;
-            }
-
-            if (!message) {
-                showStatus('Please enter a message', 'error');
-                return;
-            }
-
-            // Close previous connection if exists
-            if (eventSource) {
-                eventSource.close();
-                eventSource = null;
-            }
-
-            // Add user message
-            addMessage(`You: ${message}`, 'user-message');
-
-            // Update UI
-            document.getElementById('sendBtn').disabled = true;
-            document.getElementById('stopBtn').disabled = false;
-            showStatus('Connecting to agent...', 'connecting');
-            document.getElementById('messageInput').value = '';
-
-            currentChatId = chatId;
-
-            // Create bot message element
-            const chatBox = document.getElementById('chatBox');
-            const lastMessage = document.createElement('div');
-            lastMessage.className = 'message bot-message';
-            lastMessage.textContent = 'Agent: ';
-            chatBox.appendChild(lastMessage);
-
-            try {
-                const response = await fetch(`/api/v1/chat/${chatId}`, {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ message: message }),
-                });
-
-                if (!response.ok) {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-
-                showStatus('Agent is responding...', 'connected');
-
-                // Handle streaming response directly (not EventSource)
-                const reader = response.body.getReader();
-                const decoder = new TextDecoder();
-
-                while (true) {
-                    const { done, value } = await reader.read();
-                    if (done) break;
-
-                    const chunk = decoder.decode(value, { stream: true });
-                    const lines = chunk.split('\n');
-
-                    for (const line of lines) {
-                        if (line.startsWith('data: ')) {
-                            const data = line.slice(6).trim();
-
-                            if (data === '[DONE]') {
-                                showStatus('Response complete', 'connected');
-                                document.getElementById('sendBtn').disabled = false;
-                                document.getElementById('stopBtn').disabled = true;
-                            } else if (data === '[STOPPED]') {
-                                lastMessage.textContent += '\n\n[Response stopped by user]';
-                                showStatus('Agent stopped successfully', 'connected');
-                                document.getElementById('sendBtn').disabled = false;
-                                document.getElementById('stopBtn').disabled = true;
-                            } else if (data.startsWith('[ERROR]')) {
-                                lastMessage.textContent += `\n\n${data}`;
-                                showStatus('Error occurred', 'error');
-                                document.getElementById('sendBtn').disabled = false;
-                                document.getElementById('stopBtn').disabled = true;
-                            } else if (data) {
-                                lastMessage.textContent += data;
-                            }
-                        }
-                    }
-                    chatBox.scrollTop = chatBox.scrollHeight;
-                }
-
-            } catch (error) {
-                console.error('Fetch error:', error);
-                showStatus(`Error: ${error.message}`, 'error');
-                document.getElementById('sendBtn').disabled = false;
-                document.getElementById('stopBtn').disabled = true;
-            }
-        }
-
-        async function stopChat() {
-            if (!currentChatId) {
-                showStatus('No active chat to stop', 'error');
-                return;
-            }
-
-            try {
-                const response = await fetch(`/api/v1/stop/${currentChatId}`, {
-                    method: 'POST',
-                });
-
-                if (response.ok) {
-                    const data = await response.json();
-                    showStatus(data.message, 'connected');
-                    addMessage('[SYSTEM] Stop signal sent to agent', 'system-message');
-                } else {
-                    throw new Error(`HTTP error! status: ${response.status}`);
-                }
-            } catch (error) {
-                console.error('Stop error:', error);
-                showStatus(`Stop failed: ${error.message}`, 'error');
-            }
-        }
-
-        // Add Enter key support for message input
-        document.addEventListener('keypress', (e) => {
-            if (e.key === 'Enter' && !e.shiftKey) {
-                const messageInput = document.getElementById('messageInput');
-                if (messageInput && document.activeElement === messageInput) {
-                    sendMessage();
-                }
-            }
-        });
-    </script>
+    <!-- Enhanced Application Entry Point -->
+    <script type="module" src="app.js"></script>
 </body>
+
 </html>
