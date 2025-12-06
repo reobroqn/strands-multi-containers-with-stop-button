@@ -108,7 +108,7 @@ class EnhancedChatApplication {
   }
 
   /**
-   * Enhanced send message handler with better error handling
+   * Enhanced send message handler with ag-ui protocol
    */
   async handleSendMessage() {
     const chatId = this.chatIdInput.value.trim();
@@ -119,7 +119,7 @@ class EnhancedChatApplication {
       return;
     }
 
-    console.log('Enhanced sending message:', { chatId, message });
+    console.log('Sending message via ag-ui:', { chatId, message });
 
     // Add user message to chat with animation
     this.addMessageToChat('user', `You: ${message}`);
@@ -139,9 +139,9 @@ class EnhancedChatApplication {
     this.streamingMessageId = typingId;
 
     try {
-      // Use the correct FastAPI endpoint
+      // Use chat endpoint (ag-ui protocol integrated)
       const apiUrl = `/api/v1/chat/${encodeURIComponent(chatId)}`;
-      console.log('Enhanced sending to API:', apiUrl);
+      console.log('Sending to chat endpoint:', apiUrl);
 
       const response = await fetch(apiUrl, {
         method: 'POST',
@@ -152,7 +152,7 @@ class EnhancedChatApplication {
         body: JSON.stringify({ message: message })
       });
 
-      console.log('Enhanced response status:', response.status);
+      console.log('ag-ui response status:', response.status);
 
       if (!response.ok) {
         const errorText = await response.text();
@@ -166,14 +166,11 @@ class EnhancedChatApplication {
       // Update status to connected
       this.showStatus('Agent is typing...', 'connected');
 
-      // Handle Server-Sent Events (SSE) streaming
+      // Handle ag-ui event stream
       const reader = response.body.getReader();
       const decoder = new TextDecoder();
       let botMessage = '';
-
-      // Create bot message container
-      const botMessageId = this.addMessageToChat('bot', 'Agent: <span id="streaming-text"></span>');
-      this.streamingMessageId = botMessageId;
+      let botMessageId = null;
 
       while (true) {
         const { done, value } = await reader.read();
@@ -186,24 +183,49 @@ class EnhancedChatApplication {
           if (line.startsWith('data: ')) {
             const data = line.slice(6).trim();
 
-            if (data === '[DONE]') {
-              console.log('Enhanced stream completed successfully');
-              this.completeStream(botMessage.trim() || 'Response completed.');
-              break;
-            } else if (data) {
-              // Add streaming text
-              botMessage += data;
-              this.updateStreamingText(botMessage);
-              this.scrollToBottom();
+            if (!data) continue;
+
+            try {
+              const event = JSON.parse(data);
+              console.log('ag-ui event:', event);
+
+              switch (event.type) {
+                case 'RUN_STARTED':
+                  console.log('Run started:', event.run_id);
+                  break;
+
+                case 'TEXT_MESSAGE_CHUNK':
+                  // Create bot message container if not exists
+                  if (!botMessageId) {
+                    botMessageId = this.addMessageToChat('bot', 'Agent: <span id="streaming-text"></span>');
+                    this.streamingMessageId = botMessageId;
+                  }
+                  // Append text chunk
+                  botMessage += event.delta || '';
+                  this.updateStreamingText(botMessage);
+                  this.scrollToBottom();
+                  break;
+
+                case 'RUN_FINISHED':
+                  console.log('Run finished');
+                  this.completeStream(botMessage.trim() || 'Response completed.');
+                  break;
+
+                case 'RUN_ERROR':
+                  console.error('Run error:', event.message);
+                  throw new Error(event.message);
+              }
+            } catch (parseError) {
+              console.warn('Failed to parse event:', data, parseError);
             }
           }
         }
       }
 
     } catch (error) {
-      console.error('Enhanced send message error:', error);
+      console.error('ag-ui send message error:', error);
 
-      // Remove typing/ streaming indicators if they exist
+      // Remove typing/streaming indicators if they exist
       if (this.streamingMessageId) {
         this.removeMessage(this.streamingMessageId);
         this.streamingMessageId = null;

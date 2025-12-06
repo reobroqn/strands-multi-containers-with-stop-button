@@ -156,44 +156,96 @@ Mobile-first approach with breakpoints at:
 ### Component Scoping
 Each component has its own CSS file for maintainability and clear separation of concerns.
 
-## 🧪 Testing Strategy
+## 🧪 Testing with Chrome DevTools MCP
 
-### Test Coverage
-- **Unit Tests**: Individual component functionality
-- **Integration Tests**: Component interactions and workflows
-- **End-to-End Tests**: Complete user journeys
-- **Accessibility Tests**: ARIA compliance and keyboard navigation
+This application uses Chrome DevTools MCP for browser automation and testing. The Chrome DevTools MCP server provides powerful capabilities for controlling and inspecting a live Chrome browser.
 
-### Test Categories
-1. **Component Tests**: `tests/components/`
-   - Individual component behavior
-   - Props and state management
-   - Error handling
+### Prerequisites for Testing
 
-2. **Integration Tests**: `tests/integration/`
-   - Component interactions
-   - API communication
-   - User workflows
+- Chrome browser installed
+- MCP server configured with Chrome DevTools MCP
+- MCP client (Claude Code, Cursor, etc.)
 
-3. **E2E Tests**: `tests/e2e/`
-   - Complete user scenarios
-   - Cross-browser testing
-   - Mobile responsiveness
+### Testing Capabilities
+
+Chrome DevTools MCP provides comprehensive testing tools:
+
+- **Input Automation**: Click, type, drag, fill forms, keyboard shortcuts
+- **Navigation**: Page management, URL navigation, waiting for elements
+- **Emulation**: CPU/network throttling, geolocation, viewport resizing
+- **Performance**: Core Web Vitals, trace recording and analysis
+- **Network**: Request inspection and filtering
+- **Debugging**: JavaScript evaluation, console messages, screenshots
+
+### Example Test Workflow
+
+```javascript
+// Navigate to the application
+await mcp__chrome-devtools__navigate_page({
+    type: "url",
+    url: "http://localhost:8080",
+    ignoreCache: false,
+    timeout: 5000
+});
+
+// Take a snapshot to verify UI
+await mcp__chrome-devtools__take_snapshot({
+    verbose: false,
+    filePath: "test-snapshot.txt"
+});
+
+// Fill chat inputs
+const snapshot = await mcp__chrome-devtools__take_snapshot({verbose: false, filePath: null});
+const chatIdUid = snapshot.elements.find(el => el.attributes?.id === "chatId")?.uid;
+const messageUid = snapshot.elements.find(el => el.attributes?.id === "message")?.uid;
+
+await mcp__chrome-devtools__fill_form({
+    elements: [
+        { uid: chatIdUid, value: "test-session-123" },
+        { uid: messageUid, value: "Hello, agent!" }
+    ]
+});
+
+// Send message
+await mcp__chrome-devtools__click({ uid: snapshot.elements.find(el => el.attributes?.id === "sendBtn")?.uid });
+
+// Wait for response
+await mcp__chrome-devtools__wait_for({
+    text: "Agent:",
+    timeout: 10000
+});
+```
 
 ### Running Tests
-```bash
-# Run all tests
-npm test
 
-# Run specific test file
-npx playwright test tests/integration/chat-flow.spec.js
+Tests can be run through any MCP client that supports Chrome DevTools MCP:
 
-# Run with debugging
-npm run test:debug
+1. **Claude Code**: Already integrated with MCP
+2. **Cursor**: Configure MCP server in settings
+3. **VS Code**: Use MCP extension
+4. **Custom scripts**: Use MCP client library
 
-# Generate coverage report
-npx playwright test --reporter=html
-```
+### Test Categories
+
+1. **Functional Testing**:
+   - User interactions (send message, stop, clear)
+   - API communication
+   - Error handling
+
+2. **Performance Testing**:
+   - Page load performance
+   - Core Web Vitals
+   - Network throttling scenarios
+
+3. **Accessibility Testing**:
+   - ARIA attributes
+   - Keyboard navigation
+   - Screen reader compatibility
+
+4. **Cross-browser Testing**:
+   - Different Chrome versions
+   - Device emulation
+   - Viewport testing
 
 ## 🔧 Configuration
 
